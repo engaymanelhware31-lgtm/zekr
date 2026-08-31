@@ -25,8 +25,13 @@
     <p style="margin:12px 0 0; font-size:15px; color:#666;">
         ابدأ الآن... واحتسب الأجر مع كل تسبيحة واستغفار. 🌿
     </p>
+<div style="text-align:center; margin:15px 0 25px;">
+    <button onclick="sharePage()" 
+        style="background:#128C7E; color:white; border:none; padding:14px 28px; 
+        border-radius:12px; font-size:18px; font-weight:bold; cursor:pointer;">
+        📤 شارك ذكر الله
+    </button>
 </div>
-
     <style>
         * {
             box-sizing: border-box;
@@ -101,7 +106,25 @@
         }
     </style>
 </head>
+<script>
+function sharePage() {
+    const url = "https://engaymanelhware31-lgtm.github.io/zekr/";
+    const text = "ذكر الله 🤲\nاجعل التسبيح والاستغفار من عاداتك اليومية، وشارك الأجر مع أصدقائك.";
 
+    if (navigator.share) {
+        navigator.share({
+            title: "ذكر الله",
+            text: text,
+            url: url
+        });
+    } else {
+        window.open(
+            "https://wa.me/?text=" + encodeURIComponent(text + "\n" + url),
+            "_blank"
+        );
+    }
+}
+</script>
 <body>
 
 <div class="page">
