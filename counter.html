@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ذكر الله</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f3f6f4;
+            color: #222;
+            padding: 20px;
+        }
+
+        .page {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 10px 0 25px;
+            color: #14532d;
+        }
+
+        .counter-box {
+            background: white;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.10);
+        }
+
+        .zekr-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #14532d;
+        }
+
+        .counter {
+            font-size: 60px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .count-button {
+            width: 100%;
+            height: 90px;
+            border: none;
+            border-radius: 15px;
+            background: #198754;
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .count-button:active {
+            transform: scale(0.97);
+        }
+
+        .reset-button {
+            margin-top: 12px;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 10px;
+            background: #dc3545;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <h1>ذكر الله</h1>
+
+    <!-- سبحان الله -->
+    <div class="counter-box">
+        <div class="zekr-name">سبحان الله</div>
+
+        <div class="counter" id="counter1">0</div>
+
+        <button class="count-button" onclick="increaseCounter(1)">
+            اضغط للذكر
+        </button>
+
+        <button class="reset-button" onclick="resetCounter(1)">
+            تصفير
+        </button>
+    </div>
+
+
+    <!-- الحمد لله -->
+    <div class="counter-box">
+        <div class="zekr-name">الحمد لله</div>
+
+        <div class="counter" id="counter2">0</div>
+
+        <button class="count-button" onclick="increaseCounter(2)">
+            اضغط للذكر
+        </button>
+
+        <button class="reset-button" onclick="resetCounter(2)">
+            تصفير
+        </button>
+    </div>
+
+
+    <!-- الله أكبر -->
+    <div class="counter-box">
+        <div class="zekr-name">الله أكبر</div>
+
+        <div class="counter" id="counter3">0</div>
+
+        <button class="count-button" onclick="increaseCounter(3)">
+            اضغط للذكر
+        </button>
+
+        <button class="reset-button" onclick="resetCounter(3)">
+            تصفير
+        </button>
+    </div>
+
+
+    <!-- لا إله إلا الله -->
+    <div class="counter-box">
+        <div class="zekr-name">لا إله إلا الله</div>
+
+        <div class="counter" id="counter4">0</div>
+
+        <button class="count-button" onclick="increaseCounter(4)">
+            اضغط للذكر
+        </button>
+
+        <button class="reset-button" onclick="resetCounter(4)">
+            تصفير
+        </button>
+    </div>
+
+</div>
+
+
+<script>
+
+    // العدادات
+    let counters = {
+        1: 0,
+        2: 0,
+        3: 0,
+        4: 0
+    };
+
+
+    // زيادة العداد
+    function increaseCounter(number) {
+
+        counters[number]++;
+
+        document.getElementById("counter" + number).innerText =
+            counters[number];
+    }
+
+
+    // تصفير العداد
+    function resetCounter(number) {
+
+        counters[number] = 0;
+
+        document.getElementById("counter" + number).innerText = "0";
+    }
+
+</script>
+
+</body>
+</html>
