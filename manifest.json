@@ -1,0 +1,24 @@
+{
+  "name": "ذكر الله",
+  "short_name": "ذكر الله",
+  "description": "عداد التسبيح والاستغفار والأذكار",
+  "start_url": "/zekr/",
+  "scope": "/zekr/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#14532d",
+  "lang": "ar",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "/zekr/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/zekr/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
