@@ -1,39 +1,33 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ذكر الله - عداد التسبيح والاستغفار والأذكار</title>
 
-<meta name="description" content="ذكر الله - عداد مجاني للتسبيح والاستغفار والأذكار. سبحان الله، الحمد لله، الله أكبر، لا إله إلا الله. اجعل ذكر الله من عاداتك اليومية.">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-<meta name="keywords" content="ذكر الله, عداد التسبيح, عداد الذكر, عداد الاستغفار, التسبيح, الاستغفار, الأذكار, سبحان الله, الحمد لله, الله أكبر, لا إله إلا الله">
+    <title>ذكر الله - عداد التسبيح والأذكار</title>
 
-<meta name="robots" content="index, follow">
+    <meta name="description"
+          content="ذكر الله - عداد التسبيح والاستغفار والأذكار. اجعل ذكر الله من عاداتك اليومية.">
 
-<meta property="og:title" content="ذكر الله - عداد التسبيح والاستغفار">
+    <meta name="keywords"
+          content="ذكر الله, التسبيح, الاستغفار, الأذكار, أذكار الصباح, أذكار المساء, عداد التسبيح">
 
-<meta property="og:description" content="اجعل التسبيح والاستغفار من عاداتك اليومية. استخدم عداد ذكر الله وشارك الأجر مع أصدقائك.">
+    <meta name="robots" content="index, follow">
 
-<meta property="og:type" content="website">  
-    <div style="background:white; padding:20px; margin:0 0 25px 0; border-radius:18px; text-align:center; line-height:1.9; color:#14532d; box-shadow:0 4px 15px rgba(0,0,0,0.08);">
-    <p style="margin:0; font-size:18px; font-weight:bold;">
-        اجعل التسبيح والاستغفار من عاداتك، عسى الله أن يكرمنا وإياكم بفضله ورحمته،
-        ويجعل ألسنتنا عامرةً بذكره وقلوبنا مطمئنةً بقربه. 🤲🏻
-    </p>
+    <meta property="og:title"
+          content="ذكر الله - عداد التسبيح والأذكار">
 
-    <p style="margin:12px 0 0; font-size:15px; color:#666;">
-      
-        ابدأ الآن... واحتسب الأجر مع كل تسبيحة واستغفار. 🌿 اهداء العبد الفقير الى الله ايمن ابوالمجد 
-    </p>
-<div style="text-align:center; margin:15px 0 25px;">
-    <button onclick="sharePage()" 
-        style="background:#128C7E; color:white; border:none; padding:14px 28px; 
-        border-radius:12px; font-size:18px; font-weight:bold; cursor:pointer;">
-        📤 شارك ذكر الله
-    </button>
-</div>
+    <meta property="og:description"
+          content="اجعل التسبيح والاستغفار من عاداتك اليومية وشارك الأجر مع أصدقائك.">
+
+    <meta property="og:type" content="website">
+
     <style>
+
         * {
             box-sizing: border-box;
         }
@@ -41,208 +35,710 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #f3f6f4;
+            background: #ffffff;
             color: #222;
-            padding: 20px;
+            min-height: 100vh;
         }
 
-        .page {
-            max-width: 600px;
-            margin: auto;
-        }
+        /* الرسالة العلوية */
 
-        h1 {
+        .top-message {
+            width: 250px;
+            margin: 45px 0 0 30%;
+            padding: 8px 12px;
+
+            border: 1px solid #333;
+
+            background: #fff;
+
+            font-size: 14px;
+
             text-align: center;
-            margin: 10px 0 25px;
-            color: #14532d;
+
+            line-height: 1.6;
         }
+
+        /* القائمة الرئيسية */
+
+        .menu {
+            width: 285px;
+
+            margin-top: 68px;
+
+            margin-right: 3%;
+        }
+
+        .menu-button {
+            width: 100%;
+
+            height: 48px;
+
+            margin-bottom: 55px;
+
+            background: linear-gradient(
+                to bottom,
+                #ffffff,
+                #eeeeee
+            );
+
+            border: 1px solid #aaa;
+
+            border-radius: 5px;
+
+            font-size: 15px;
+
+            color: #333;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .menu-button:hover {
+            background: #f5f5f5;
+        }
+
+        /* الصفحات الداخلية */
+
+        .section {
+            display: none;
+
+            width: 600px;
+
+            max-width: 90%;
+
+            margin: 30px auto;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .section-title {
+            text-align: center;
+
+            color: #14532d;
+
+            font-size: 28px;
+
+            margin-bottom: 25px;
+        }
+
+        .back-button {
+            display: block;
+
+            margin: 0 auto 25px;
+
+            padding: 8px 25px;
+
+            border: 1px solid #999;
+
+            background: #fff;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+        }
+
+        /* عداد الذكر */
 
         .counter-box {
+
             background: white;
+
             margin-bottom: 20px;
+
             padding: 20px;
+
             border-radius: 18px;
+
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.10);
+
+            box-shadow:
+                0 4px 15px rgba(0,0,0,0.10);
         }
 
         .zekr-name {
+
             font-size: 24px;
+
             font-weight: bold;
+
             margin-bottom: 15px;
+
             color: #14532d;
         }
 
         .counter {
+
             font-size: 60px;
+
             font-weight: bold;
+
             margin: 15px 0;
         }
 
         .count-button {
+
             width: 100%;
+
             height: 90px;
+
             border: none;
+
             border-radius: 15px;
+
             background: #198754;
+
             color: white;
+
             font-size: 28px;
+
             font-weight: bold;
+
             cursor: pointer;
         }
 
         .count-button:active {
+
             transform: scale(0.97);
         }
 
         .reset-button {
+
             margin-top: 12px;
+
             padding: 10px 25px;
+
             border: none;
+
             border-radius: 10px;
+
             background: #dc3545;
+
             color: white;
+
             font-size: 16px;
+
             cursor: pointer;
         }
-    </style>
-</head>
-<script>
-function sharePage() {
-    const url = "https://engaymanelhware31-lgtm.github.io/zekr/";
-    const text = "ذكر الله 🤲\nاجعل التسبيح والاستغفار من عاداتك اليومية، وشارك الأجر مع أصدقائك.";
 
-    if (navigator.share) {
-        navigator.share({
-            title: "ذكر الله",
-            text: text,
-            url: url
-        });
-    } else {
-        window.open(
-            "https://wa.me/?text=" + encodeURIComponent(text + "\n" + url),
-            "_blank"
-        );
-    }
-}
-</script>
+        /* نص الأذكار */
+
+        .azkar-box {
+
+            background: #fafafa;
+
+            border: 1px solid #ddd;
+
+            border-radius: 10px;
+
+            padding: 25px;
+
+            margin-bottom: 15px;
+
+            line-height: 2;
+
+            font-size: 18px;
+
+            text-align: center;
+        }
+
+        /* المشاركة */
+
+        .share-button {
+
+            display: block;
+
+            margin: 30px auto;
+
+            padding: 12px 25px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background: #128C7E;
+
+            color: white;
+
+            font-size: 17px;
+
+            cursor: pointer;
+        }
+
+        /* الموبايل */
+
+        @media (max-width: 700px) {
+
+            .top-message {
+
+                margin: 30px auto 0;
+
+            }
+
+            .menu {
+
+                width: 85%;
+
+                margin: 60px auto 0;
+
+            }
+
+            .menu-button {
+
+                margin-bottom: 35px;
+
+            }
+
+            .section {
+
+                width: 95%;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
 <body>
 
-<div class="page">
 
-    <h1>ذكر الله</h1>
+<!-- الرسالة الموجودة أعلى الصفحة -->
 
-    <!-- سبحان الله -->
-    <div class="counter-box">
-        <div class="zekr-name">  سبحان الله وبحمده سبحان الله العظيم  </div>
+<div class="top-message">
 
-        <div class="counter" id="counter1">0</div>
+    وذكر فإن الذكرى تنفع المؤمنين
 
-        <button class="count-button" onclick="increaseCounter(1)">
-            اضغط للذكر
-        </button>
-
-        <button class="reset-button" onclick="resetCounter(1)">
-            تصفير
-        </button>
-    </div>
-     <!-- سبحان الله -->
-    <div class="counter-box">
-        <div class="zekr-name">  سبحان الله   </div>
-
-        <div class="counter" id="counter1">0</div>
-
-        <button class="count-button" onclick="increaseCounter(1)">
-            اضغط للذكر
-        </button>
-
-        <button class="reset-button" onclick="resetCounter(1)">
-            تصفير
-        </button>
-    </div>
+</div>
 
 
+<!-- القائمة الرئيسية -->
 
-    <!-- الحمد لله -->
-    <div class="counter-box">
-        <div class="zekr-name">الحمد لله</div>
+<div class="menu">
 
-        <div class="counter" id="counter2">0</div>
+    <button class="menu-button"
+            onclick="showSection('morning')">
 
-        <button class="count-button" onclick="increaseCounter(2)">
-            اضغط للذكر
-        </button>
+        أذكار الصباح
 
-        <button class="reset-button" onclick="resetCounter(2)">
-            تصفير
-        </button>
-    </div>
+    </button>
 
 
-    <!-- الله أكبر -->
-    <div class="counter-box">
-        <div class="zekr-name">الله أكبر</div>
+    <button class="menu-button"
+            onclick="showSection('evening')">
 
-        <div class="counter" id="counter3">0</div>
+        أذكار المساء
 
-        <button class="count-button" onclick="increaseCounter(3)">
-            اضغط للذكر
-        </button>
+    </button>
 
-        <button class="reset-button" onclick="resetCounter(3)">
-            تصفير
-        </button>
+
+    <button class="menu-button"
+            onclick="showSection('tasbeeh')">
+
+        التسبيح والذكر
+
+    </button>
+
+</div>
+
+
+
+<!-- ========================= -->
+<!-- أذكار الصباح -->
+<!-- ========================= -->
+
+<div id="morning" class="section">
+
+    <button class="back-button"
+            onclick="showHome()">
+
+        الرئيسية
+
+    </button>
+
+    <div class="section-title">
+
+        أذكار الصباح
+
     </div>
 
+    <div class="azkar-box">
 
-    <!-- لا إله إلا الله -->
-    <div class="counter-box">
-        <div class="zekr-name">لا إله إلا الله</div>
+        أذكار الصباح سيتم إضافتها هنا بإذن الله 🌿
 
-        <div class="counter" id="counter4">0</div>
-
-        <button class="count-button" onclick="increaseCounter(4)">
-            اضغط للذكر
-        </button>
-
-        <button class="reset-button" onclick="resetCounter(4)">
-            تصفير
-        </button>
     </div>
 
 </div>
 
 
+
+<!-- ========================= -->
+<!-- أذكار المساء -->
+<!-- ========================= -->
+
+<div id="evening" class="section">
+
+    <button class="back-button"
+            onclick="showHome()">
+
+        الرئيسية
+
+    </button>
+
+    <div class="section-title">
+
+        أذكار المساء
+
+    </div>
+
+    <div class="azkar-box">
+
+        أذكار المساء سيتم إضافتها هنا بإذن الله 🌙
+
+    </div>
+
+</div>
+
+
+
+<!-- ========================= -->
+<!-- التسبيح والذكر -->
+<!-- ========================= -->
+
+<div id="tasbeeh" class="section">
+
+    <button class="back-button"
+            onclick="showHome()">
+
+        الرئيسية
+
+    </button>
+
+    <div class="section-title">
+
+        التسبيح والذكر
+
+    </div>
+
+
+    <!-- سبحان الله وبحمده -->
+
+    <div class="counter-box">
+
+        <div class="zekr-name">
+
+            سبحان الله وبحمده سبحان الله العظيم
+
+        </div>
+
+        <div class="counter" id="counter1">
+
+            0
+
+        </div>
+
+        <button class="count-button"
+                onclick="increaseCounter(1)">
+
+            اضغط للذكر
+
+        </button>
+
+        <button class="reset-button"
+                onclick="resetCounter(1)">
+
+            تصفير
+
+        </button>
+
+    </div>
+
+
+
+    <!-- سبحان الله -->
+
+    <div class="counter-box">
+
+        <div class="zekr-name">
+
+            سبحان الله
+
+        </div>
+
+        <div class="counter" id="counter2">
+
+            0
+
+        </div>
+
+        <button class="count-button"
+                onclick="increaseCounter(2)">
+
+            اضغط للذكر
+
+        </button>
+
+        <button class="reset-button"
+                onclick="resetCounter(2)">
+
+            تصفير
+
+        </button>
+
+    </div>
+
+
+
+    <!-- الحمد لله -->
+
+    <div class="counter-box">
+
+        <div class="zekr-name">
+
+            الحمد لله
+
+        </div>
+
+        <div class="counter" id="counter3">
+
+            0
+
+        </div>
+
+        <button class="count-button"
+                onclick="increaseCounter(3)">
+
+            اضغط للذكر
+
+        </button>
+
+        <button class="reset-button"
+                onclick="resetCounter(3)">
+
+            تصفير
+
+        </button>
+
+    </div>
+
+
+
+    <!-- الله أكبر -->
+
+    <div class="counter-box">
+
+        <div class="zekr-name">
+
+            الله أكبر
+
+        </div>
+
+        <div class="counter" id="counter4">
+
+            0
+
+        </div>
+
+        <button class="count-button"
+                onclick="increaseCounter(4)">
+
+            اضغط للذكر
+
+        </button>
+
+        <button class="reset-button"
+                onclick="resetCounter(4)">
+
+            تصفير
+
+        </button>
+
+    </div>
+
+
+
+    <!-- لا إله إلا الله -->
+
+    <div class="counter-box">
+
+        <div class="zekr-name">
+
+            لا إله إلا الله
+
+        </div>
+
+        <div class="counter" id="counter5">
+
+            0
+
+        </div>
+
+        <button class="count-button"
+                onclick="increaseCounter(5)">
+
+            اضغط للذكر
+
+        </button>
+
+        <button class="reset-button"
+                onclick="resetCounter(5)">
+
+            تصفير
+
+        </button>
+
+    </div>
+
+
+
+    <!-- زر المشاركة -->
+
+    <button class="share-button"
+            onclick="sharePage()">
+
+        📤 شارك ذكر الله
+
+    </button>
+
+</div>
+
+
+
 <script>
 
-    // العدادات
+    /* =========================
+       الانتقال بين الصفحات
+    ========================= */
+
+    function showSection(sectionId) {
+
+        document.querySelector(".menu").style.display = "none";
+
+        document.querySelector(".top-message").style.display = "none";
+
+        document.querySelectorAll(".section")
+            .forEach(function(section) {
+
+                section.classList.remove("active");
+
+            });
+
+        document.getElementById(sectionId)
+            .classList.add("active");
+    }
+
+
+    /* العودة للرئيسية */
+
+    function showHome() {
+
+        document.querySelectorAll(".section")
+            .forEach(function(section) {
+
+                section.classList.remove("active");
+
+            });
+
+        document.querySelector(".menu").style.display = "block";
+
+        document.querySelector(".top-message").style.display = "block";
+    }
+
+
+
+    /* =========================
+       العدادات
+    ========================= */
+
     let counters = {
+
         1: 0,
+
         2: 0,
+
         3: 0,
-        4: 0
+
+        4: 0,
+
+        5: 0
+
     };
 
 
-    // زيادة العداد
     function increaseCounter(number) {
 
         counters[number]++;
 
-        document.getElementById("counter" + number).innerText =
-            counters[number];
+        document.getElementById(
+            "counter" + number
+        ).innerText = counters[number];
+
     }
 
 
-    // تصفير العداد
     function resetCounter(number) {
 
         counters[number] = 0;
 
-        document.getElementById("counter" + number).innerText = "0";
+        document.getElementById(
+            "counter" + number
+        ).innerText = "0";
+
+    }
+
+
+
+    /* =========================
+       مشاركة الصفحة
+    ========================= */
+
+    function sharePage() {
+
+        const url =
+            "https://engaymanelhware31-lgtm.github.io/zekr/";
+
+        const text =
+            "ذكر الله 🤲\n" +
+            "اجعل التسبيح والاستغفار من عاداتك اليومية، " +
+            "وشارك الأجر مع أصدقائك.";
+
+        if (navigator.share) {
+
+            navigator.share({
+
+                title: "ذكر الله",
+
+                text: text,
+
+                url: url
+
+            });
+
+        } else {
+
+            window.open(
+
+                "https://wa.me/?text=" +
+                encodeURIComponent(
+                    text + "\n" + url
+                ),
+
+                "_blank"
+
+            );
+
+        }
+
     }
 
 </script>
 
+
 </body>
+
 </html>
