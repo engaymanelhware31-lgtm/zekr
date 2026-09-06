@@ -6,35 +6,38 @@
     <meta charset="UTF-8">
 
     <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+          content="width=device-width, initial-scale=1.0">
 
-    <title>ذكر الله</title>
+    <title>ذكر الله - عداد التسبيح والاستغفار والأذكار</title>
 
     <meta name="description"
-          content="ذكر الله - عداد التسبيح والاستغفار والأذكار">
+          content="ذكر الله - عداد مجاني للتسبيح والاستغفار والأذكار. سبحان الله، الحمد لله، الله أكبر، لا إله إلا الله، والصلاة على النبي ﷺ.">
 
-    <meta name="theme-color" content="#14532d">
+    <meta name="keywords"
+          content="ذكر الله, عداد التسبيح, عداد الذكر, عداد الاستغفار, التسبيح, الاستغفار, الأذكار, الصلاة على النبي">
 
-    <!-- PWA -->
-    <link rel="manifest" href="/zekr/manifest.json">
+    <meta name="robots"
+          content="index, follow">
 
-    <!-- Android / Chrome -->
-    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color"
+          content="#14532d">
 
-    <!-- iPhone / iPad -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style"
-          content="default">
-    <meta name="apple-mobile-web-app-title"
-          content="ذكر الله">
+    <meta property="og:title"
+          content="ذكر الله - عداد التسبيح والاستغفار">
 
-    <!-- أيقونة iPhone -->
+    <meta property="og:description"
+          content="اجعل التسبيح والاستغفار من عاداتك اليومية واحتسب الأجر مع كل ذكر.">
+
+    <meta property="og:type"
+          content="website">
+
+
+    <!-- التطبيق -->
+
+    <link rel="manifest"
+          href="/zekr/manifest.json">
+
     <link rel="apple-touch-icon"
-          href="/zekr/icon-192.png">
-
-    <!-- أيقونة المتصفح -->
-    <link rel="icon"
-          type="image/png"
           href="/zekr/icon-192.png">
 
 
@@ -44,25 +47,17 @@
             box-sizing: border-box;
         }
 
-        html {
-            background: #ffffff;
-        }
 
         body {
 
             margin: 0;
             padding: 20px;
 
-            font-family:
-                Arial,
-                "Tahoma",
-                sans-serif;
+            font-family: Arial, sans-serif;
 
             background: #ffffff;
-            color: #222;
 
-            padding-bottom:
-                calc(25px + env(safe-area-inset-bottom));
+            color: #222;
 
         }
 
@@ -70,12 +65,13 @@
         .page {
 
             max-width: 1100px;
+
             margin: auto;
 
         }
 
 
-        /* الرسالة الرئيسية */
+        /* الرسالة العلوية */
 
         .top-message {
 
@@ -87,8 +83,7 @@
 
             padding: 20px;
 
-            margin:
-                0 auto 15px;
+            margin: 0 auto 15px;
 
             text-align: center;
 
@@ -97,6 +92,7 @@
             max-width: 700px;
 
         }
+
 
         .top-message p {
 
@@ -119,8 +115,7 @@
 
             padding: 15px;
 
-            margin:
-                0 auto 25px;
+            margin: 0 auto 25px;
 
             text-align: center;
 
@@ -143,8 +138,7 @@
 
             font-size: 38px;
 
-            margin:
-                20px 0 25px;
+            margin: 20px 0 25px;
 
         }
 
@@ -155,8 +149,7 @@
 
             display: grid;
 
-            grid-template-columns:
-                repeat(3, 1fr);
+            grid-template-columns: repeat(3, 1fr);
 
             gap: 18px;
 
@@ -179,8 +172,7 @@
 
             text-align: center;
 
-            box-shadow:
-                0 3px 10px rgba(0,0,0,0.06);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
 
         }
 
@@ -255,15 +247,15 @@
 
             transition: 0.15s;
 
-            touch-action: manipulation;
-
         }
+
 
         .count-button:hover {
 
             background: #157347;
 
         }
+
 
         .count-button:active {
 
@@ -282,8 +274,7 @@
 
             margin-top: 8px;
 
-            border:
-                1px solid #dc3545;
+            border: 1px solid #dc3545;
 
             border-radius: 8px;
 
@@ -297,9 +288,8 @@
 
             cursor: pointer;
 
-            touch-action: manipulation;
-
         }
+
 
         .reset-button:hover {
 
@@ -314,12 +304,12 @@
 
         .baqiyat {
 
-            grid-column:
-                1 / -1;
+            grid-column: 1 / -1;
 
             margin-top: 2px;
 
         }
+
 
         .baqiyat .zekr-name {
 
@@ -332,21 +322,21 @@
 
         .total-box {
 
-            margin:
-                25px auto 20px;
+            margin: 25px auto 10px;
 
-            max-width: 700px;
+            max-width: 600px;
 
-            padding: 20px;
+            background: #f3faf5;
 
-            border:
-                2px solid #14532d;
+            border: 2px solid #14532d;
 
             border-radius: 12px;
 
-            background: #f3faf6;
+            padding: 20px;
 
             text-align: center;
+
+            box-shadow: 0 3px 12px rgba(0,0,0,0.07);
 
         }
 
@@ -364,7 +354,7 @@
         }
 
 
-        .total-number {
+        .total-counter {
 
             font-size: 45px;
 
@@ -374,32 +364,34 @@
 
             background: #ffffff;
 
-            border:
-                1px solid #ddd5ca;
+            border: 1px solid #ddd5ca;
 
-            border-radius: 8px;
+            border-radius: 10px;
 
-            padding: 8px;
+            padding: 10px;
 
-            margin-bottom: 15px;
+            margin: 10px 0 15px;
 
         }
 
 
-        /* تصفير الجميع */
+        /* زر تصفير الكل */
 
         .reset-all-button {
 
-            background: #dc3545;
+            width: 100%;
 
-            color: white;
+            max-width: 350px;
+
+            height: 45px;
 
             border: none;
 
             border-radius: 8px;
 
-            padding:
-                12px 25px;
+            background: #dc3545;
+
+            color: white;
 
             font-size: 17px;
 
@@ -407,25 +399,23 @@
 
             cursor: pointer;
 
-            touch-action: manipulation;
-
         }
+
 
         .reset-all-button:hover {
 
-            background: #b02a37;
+            background: #bb2d3b;
 
         }
 
 
-        /* المشاركة */
+        /* زر المشاركة */
 
         .share-container {
 
             text-align: center;
 
-            margin:
-                20px 0 10px;
+            margin: 20px 0 30px;
 
         }
 
@@ -440,8 +430,7 @@
 
             border-radius: 9px;
 
-            padding:
-                13px 35px;
+            padding: 13px 35px;
 
             font-size: 18px;
 
@@ -449,14 +438,29 @@
 
             cursor: pointer;
 
-            touch-action: manipulation;
-
         }
 
 
         .share-button:hover {
 
             background: #0f766e;
+
+        }
+
+
+        /* الفوتر */
+
+        .footer {
+
+            text-align: center;
+
+            color: #777;
+
+            font-size: 14px;
+
+            margin-top: 25px;
+
+            padding-bottom: 15px;
 
         }
 
@@ -471,16 +475,40 @@
 
             }
 
+
             h1 {
 
                 font-size: 30px;
 
             }
 
+
             .zekr-grid {
 
-                grid-template-columns:
-                    repeat(2, 1fr);
+                grid-template-columns: repeat(2, 1fr);
+
+                gap: 12px;
+
+            }
+
+
+            .counter-box {
+
+                padding: 13px;
+
+            }
+
+
+            .zekr-name {
+
+                font-size: 19px;
+
+            }
+
+
+            .count-button {
+
+                font-size: 17px;
 
             }
 
@@ -495,11 +523,13 @@
 
             }
 
+
             .baqiyat {
 
                 grid-column: auto;
 
             }
+
 
             .top-message p {
 
@@ -507,13 +537,22 @@
 
             }
 
+
             .zekr-name {
 
                 font-size: 20px;
 
             }
 
-            .total-number {
+
+            .counter {
+
+                font-size: 34px;
+
+            }
+
+
+            .total-counter {
 
                 font-size: 40px;
 
@@ -538,8 +577,8 @@
 
         <p>
 
-            اجعل التسبيح والاستغفار من عاداتك،
-            عسى الله أن يكرمنا وإياكم بفضله ورحمته،
+            اجعل التسبيح والاستغفار من عاداتك، عسى الله أن يكرمنا وإياكم بفضله ورحمته،
+
             ويجعل ألسنتنا عامرةً بذكره وقلوبنا مطمئنةً بقربه. 🤲🏻
 
         </p>
@@ -575,24 +614,26 @@
         <div class="counter-box">
 
             <div class="zekr-name">
+
                 سبحان الله
+
             </div>
 
             <div class="counter" id="counter1">
+
                 0
+
             </div>
 
-            <button
-                class="count-button"
-                onclick="increaseCounter(1)">
+            <button class="count-button"
+                    onclick="increaseCounter(1)">
 
                 ☝ اضغط للذكر
 
             </button>
 
-            <button
-                class="reset-button"
-                onclick="resetCounter(1)">
+            <button class="reset-button"
+                    onclick="resetCounter(1)">
 
                 ↻ تصفير
 
@@ -606,24 +647,26 @@
         <div class="counter-box">
 
             <div class="zekr-name">
+
                 الحمد لله
+
             </div>
 
             <div class="counter" id="counter2">
+
                 0
+
             </div>
 
-            <button
-                class="count-button"
-                onclick="increaseCounter(2)">
+            <button class="count-button"
+                    onclick="increaseCounter(2)">
 
                 ☝ اضغط للذكر
 
             </button>
 
-            <button
-                class="reset-button"
-                onclick="resetCounter(2)">
+            <button class="reset-button"
+                    onclick="resetCounter(2)">
 
                 ↻ تصفير
 
@@ -639,25 +682,26 @@
             <div class="zekr-name">
 
                 سبحان الله وبحمده<br>
+
                 سبحان الله العظيم
 
             </div>
 
             <div class="counter" id="counter3">
+
                 0
+
             </div>
 
-            <button
-                class="count-button"
-                onclick="increaseCounter(3)">
+            <button class="count-button"
+                    onclick="increaseCounter(3)">
 
                 ☝ اضغط للذكر
 
             </button>
 
-            <button
-                class="reset-button"
-                onclick="resetCounter(3)">
+            <button class="reset-button"
+                    onclick="resetCounter(3)">
 
                 ↻ تصفير
 
@@ -671,24 +715,26 @@
         <div class="counter-box">
 
             <div class="zekr-name">
+
                 الله أكبر
+
             </div>
 
             <div class="counter" id="counter4">
+
                 0
+
             </div>
 
-            <button
-                class="count-button"
-                onclick="increaseCounter(4)">
+            <button class="count-button"
+                    onclick="increaseCounter(4)">
 
                 ☝ اضغط للذكر
 
             </button>
 
-            <button
-                class="reset-button"
-                onclick="resetCounter(4)">
+            <button class="reset-button"
+                    onclick="resetCounter(4)">
 
                 ↻ تصفير
 
@@ -702,24 +748,26 @@
         <div class="counter-box">
 
             <div class="zekr-name">
+
                 لا حول ولا قوة إلا بالله
+
             </div>
 
             <div class="counter" id="counter5">
+
                 0
+
             </div>
 
-            <button
-                class="count-button"
-                onclick="increaseCounter(5)">
+            <button class="count-button"
+                    onclick="increaseCounter(5)">
 
                 ☝ اضغط للذكر
 
             </button>
 
-            <button
-                class="reset-button"
-                onclick="resetCounter(5)">
+            <button class="reset-button"
+                    onclick="resetCounter(5)">
 
                 ↻ تصفير
 
@@ -733,24 +781,26 @@
         <div class="counter-box">
 
             <div class="zekr-name">
+
                 أستغفر الله
+
             </div>
 
             <div class="counter" id="counter6">
+
                 0
+
             </div>
 
-            <button
-                class="count-button"
-                onclick="increaseCounter(6)">
+            <button class="count-button"
+                    onclick="increaseCounter(6)">
 
                 ☝ اضغط للذكر
 
             </button>
 
-            <button
-                class="reset-button"
-                onclick="resetCounter(6)">
+            <button class="reset-button"
+                    onclick="resetCounter(6)">
 
                 ↻ تصفير
 
@@ -769,26 +819,58 @@
 
                 <br>
 
-                (سبحان الله، والحمد لله،
-                ولا إله إلا الله، والله أكبر)
+                (سبحان الله، والحمد لله، ولا إله إلا الله، والله أكبر)
 
             </div>
 
             <div class="counter" id="counter7">
+
                 0
+
             </div>
 
-            <button
-                class="count-button"
-                onclick="increaseCounter(7)">
+            <button class="count-button"
+                    onclick="increaseCounter(7)">
 
                 ☝ اضغط للذكر
 
             </button>
 
-            <button
-                class="reset-button"
-                onclick="resetCounter(7)">
+            <button class="reset-button"
+                    onclick="resetCounter(7)">
+
+                ↻ تصفير
+
+            </button>
+
+        </div>
+
+
+        <!-- 8 الصلاة على النبي -->
+
+        <div class="counter-box baqiyat">
+
+            <div class="zekr-name">
+
+                الصلاة على النبي ﷺ
+
+            </div>
+
+            <div class="counter" id="counter8">
+
+                0
+
+            </div>
+
+            <button class="count-button"
+                    onclick="increaseCounter(8)">
+
+                ☝ اضغط للذكر
+
+            </button>
+
+            <button class="reset-button"
+                    onclick="resetCounter(8)">
 
                 ↻ تصفير
 
@@ -800,7 +882,7 @@
     </div>
 
 
-    <!-- إجمالي جميع الأذكار -->
+    <!-- إجمالي الأذكار -->
 
     <div class="total-box">
 
@@ -810,17 +892,15 @@
 
         </div>
 
-        <div
-            class="total-number"
-            id="totalCounter">
+        <div class="total-counter"
+             id="totalCounter">
 
             0
 
         </div>
 
-        <button
-            class="reset-all-button"
-            onclick="resetAllCounters()">
+        <button class="reset-all-button"
+                onclick="resetAllCounters()">
 
             ↻ تصفير جميع الأذكار
 
@@ -833,9 +913,8 @@
 
     <div class="share-container">
 
-        <button
-            class="share-button"
-            onclick="sharePage()">
+        <button class="share-button"
+                onclick="sharePage()">
 
             📤 شارك ذكر الله
 
@@ -844,7 +923,17 @@
     </div>
 
 
+    <!-- الفوتر -->
+
+    <div class="footer">
+
+        🤲 اللهم اجعلها صدقة جارية وأجرًا لكل من ذكر الله
+
+    </div>
+
+
 </div>
+
 
 
 <script>
@@ -854,46 +943,63 @@
        العدادات
     ========================= */
 
+
     let counters = {
 
         1: 0,
+
         2: 0,
+
         3: 0,
+
         4: 0,
+
         5: 0,
+
         6: 0,
-        7: 0
+
+        7: 0,
+
+        8: 0
 
     };
+
 
 
     /* =========================
        تحميل العدادات المحفوظة
     ========================= */
 
+
     function loadCounters() {
 
-        const saved =
+        const savedCounters =
             localStorage.getItem("zekrCounters");
 
-        if (saved) {
+
+        if (savedCounters) {
 
             try {
 
                 const data =
-                    JSON.parse(saved);
+                    JSON.parse(savedCounters);
 
-                for (let i = 1; i <= 7; i++) {
 
-                    counters[i] =
-                        Number(data[i]) || 0;
+                for (let number = 1; number <= 8; number++) {
+
+                    if (typeof data[number] === "number") {
+
+                        counters[number] =
+                            data[number];
+
+                    }
 
                 }
 
             } catch (error) {
 
                 console.log(
-                    "تعذر تحميل العدادات",
+                    "خطأ في تحميل العدادات",
                     error
                 );
 
@@ -901,28 +1007,36 @@
 
         }
 
+
         updateAllCounters();
 
     }
+
 
 
     /* =========================
        حفظ العدادات
     ========================= */
 
+
     function saveCounters() {
 
         localStorage.setItem(
+
             "zekrCounters",
+
             JSON.stringify(counters)
+
         );
 
     }
 
 
+
     /* =========================
        زيادة العداد
     ========================= */
+
 
     function increaseCounter(number) {
 
@@ -937,78 +1051,80 @@
     }
 
 
+
     /* =========================
        تحديث عداد واحد
     ========================= */
 
+
     function updateCounter(number) {
 
         document.getElementById(
+
             "counter" + number
-        ).innerText =
-            counters[number];
+
+        ).innerText = counters[number];
 
     }
 
 
+
     /* =========================
-       تحديث كل العدادات
+       تحديث جميع العدادات
     ========================= */
+
 
     function updateAllCounters() {
 
-        for (let i = 1; i <= 7; i++) {
+        for (let number = 1; number <= 8; number++) {
 
-            updateCounter(i);
+            updateCounter(number);
 
         }
+
 
         updateTotal();
 
     }
 
 
-    /* =========================
-       حساب الإجمالي
-    ========================= */
-
-    function calculateTotal() {
-
-        let total = 0;
-
-        for (let i = 1; i <= 7; i++) {
-
-            total +=
-                Number(counters[i]) || 0;
-
-        }
-
-        return total;
-
-    }
-
 
     /* =========================
-       تحديث الإجمالي
+       حساب إجمالي الأذكار
     ========================= */
+
 
     function updateTotal() {
 
+        let total = 0;
+
+
+        for (let number = 1; number <= 8; number++) {
+
+            total += counters[number];
+
+        }
+
+
         document.getElementById(
+
             "totalCounter"
-        ).innerText =
-            calculateTotal();
+
+        ).innerText = total;
 
     }
+
 
 
     /* =========================
        تصفير ذكر واحد
     ========================= */
 
+
     function resetCounter(number) {
 
         counters[number] = 0;
+
 
         updateCounter(number);
 
@@ -1019,27 +1135,31 @@
     }
 
 
+
     /* =========================
        تصفير جميع الأذكار
     ========================= */
 
+
     function resetAllCounters() {
 
-        const confirmed =
-            confirm(
-                "هل تريد تصفير جميع الأذكار؟"
-            );
+        const confirmation = confirm(
 
-        if (!confirmed) {
+            "هل تريد تصفير جميع الأذكار؟"
+
+        );
+
+
+        if (!confirmation) {
 
             return;
 
         }
 
 
-        for (let i = 1; i <= 7; i++) {
+        for (let number = 1; number <= 8; number++) {
 
-            counters[i] = 0;
+            counters[number] = 0;
 
         }
 
@@ -1051,110 +1171,126 @@
     }
 
 
+
     /* =========================
        مشاركة الصفحة
     ========================= */
 
-    async function sharePage() {
+
+    function sharePage() {
 
         const url =
+
             "https://engaymanelhware31-lgtm.github.io/zekr/";
 
+
         const text =
+
             "ذكر الله 🤲\n" +
-            "اجعل التسبيح والاستغفار من عاداتك اليومية، " +
-            "واحتسب الأجر مع كل ذكر.";
+
+            "اجعل التسبيح والاستغفار والصلاة على النبي ﷺ " +
+
+            "من عاداتك اليومية، واحتسب الأجر مع كل ذكر.";
 
 
         if (navigator.share) {
 
-            try {
+            navigator.share({
 
-                await navigator.share({
+                title: "ذكر الله",
 
-                    title: "ذكر الله",
+                text: text,
 
-                    text: text,
+                url: url
 
-                    url: url
+            })
 
-                });
-
-            } catch (error) {
+            .catch(function(error) {
 
                 console.log(
-                    "تم إلغاء المشاركة"
+                    "تم إلغاء المشاركة",
+                    error
                 );
 
-            }
+            });
 
-        } else {
+        }
 
-            try {
+        else {
 
-                await navigator.clipboard
-                    .writeText(url);
+            window.open(
 
-                alert(
-                    "تم نسخ رابط ذكر الله"
-                );
+                "https://wa.me/?text=" +
 
-            } catch (error) {
+                encodeURIComponent(
 
-                alert(
-                    "رابط ذكر الله:\n" + url
-                );
+                    text + "\n" + url
 
-            }
+                ),
+
+                "_blank"
+
+            );
 
         }
 
     }
 
 
+
     /* =========================
-       تشغيل Service Worker
+       تشغيل التطبيق
     ========================= */
+
 
     if ("serviceWorker" in navigator) {
 
         window.addEventListener(
+
             "load",
-            function () {
 
-                navigator.serviceWorker
-                    .register("/zekr/sw.js")
+            function() {
 
-                    .then(
-                        function (registration) {
+                navigator.serviceWorker.register(
 
-                            console.log(
-                                "تم تشغيل التطبيق"
-                            );
+                    "/zekr/sw.js"
 
-                        }
-                    )
+                )
 
-                    .catch(
-                        function (error) {
+                .then(function(registration) {
 
-                            console.log(
-                                "خطأ في Service Worker:",
-                                error
-                            );
+                    console.log(
 
-                        }
+                        "تم تشغيل تطبيق ذكر الله"
+
                     );
 
+                })
+
+                .catch(function(error) {
+
+                    console.log(
+
+                        "خطأ في تشغيل التطبيق:",
+
+                        error
+
+                    );
+
+                });
+
             }
+
         );
 
     }
 
 
+
     /* =========================
-       تشغيل الصفحة
+       تحميل البيانات عند فتح الصفحة
     ========================= */
+
 
     loadCounters();
 
