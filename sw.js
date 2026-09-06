@@ -1,21 +1,26 @@
-const CACHE_NAME = "zekr-app-v1";
+const CACHE_NAME = "zekr-v2";
 
 const FILES_TO_CACHE = [
     "/zekr/",
     "/zekr/index.html",
-    "/zekr/manifest.json"
+    "/zekr/manifest.json",
+    "/zekr/icon-192.png",
+    "/zekr/icon-512.png"
 ];
 
 self.addEventListener("install", event => {
 
+    self.skipWaiting();
+
     event.waitUntil(
 
-        caches.open(CACHE_NAME)
-            .then(cache => cache.addAll(FILES_TO_CACHE))
+        caches.open(CACHE_NAME).then(cache => {
+
+            return cache.addAll(FILES_TO_CACHE);
+
+        })
 
     );
-
-    self.skipWaiting();
 
 });
 
@@ -24,21 +29,29 @@ self.addEventListener("activate", event => {
 
     event.waitUntil(
 
-        caches.keys().then(keys => {
+        caches.keys().then(cacheNames => {
 
             return Promise.all(
 
-                keys
-                    .filter(key => key !== CACHE_NAME)
-                    .map(key => caches.delete(key))
+                cacheNames.map(cacheName => {
+
+                    if (cacheName !== CACHE_NAME) {
+
+                        return caches.delete(cacheName);
+
+                    }
+
+                })
 
             );
+
+        }).then(() => {
+
+            return self.clients.claim();
 
         })
 
     );
-
-    self.clients.claim();
 
 });
 
@@ -47,10 +60,25 @@ self.addEventListener("fetch", event => {
 
     event.respondWith(
 
-        caches.match(event.request)
+        fetch(event.request)
+
             .then(response => {
 
-                return response || fetch(event.request);
+                const responseClone = response.clone();
+
+                caches.open(CACHE_NAME).then(cache => {
+
+                    cache.put(event.request, responseClone);
+
+                });
+
+                return response;
+
+            })
+
+            .catch(() => {
+
+                return caches.match(event.request);
 
             })
 
