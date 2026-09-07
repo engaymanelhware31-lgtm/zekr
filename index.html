@@ -28,535 +28,961 @@
 
 <style>
 
+/* =========================================
+   الإعدادات العامة
+========================================= */
+
 * {
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-    padding: 15px;
-    font-family: Arial, sans-serif;
-    background: #ffffff;
-    color: #222;
+html {
+    scroll-behavior: smooth;
 }
+
+body {
+
+    margin: 0;
+
+    padding: 15px;
+
+    font-family: Arial, sans-serif;
+
+    color: #222;
+
+    /*
+       الخلفية الجديدة
+    */
+
+    background-color: #f8f4e8;
+
+    background-image:
+        url("/zekr/background.png");
+
+    background-size: cover;
+
+    background-position: center top;
+
+    background-repeat: no-repeat;
+
+    background-attachment: fixed;
+
+    min-height: 100vh;
+}
+
 
 .page {
+
     max-width: 1100px;
+
     margin: auto;
+
 }
 
 
-/* =========================
-   الرسالة الرئيسية
-========================= */
+/* =========================================
+   الرسالة العلوية
+========================================= */
 
 .top-message {
-    background: #ffffff;
+
+    background: rgba(255,255,255,0.94);
+
     border: 1px solid #b8aa96;
-    border-radius: 8px;
+
+    border-radius: 10px;
+
     padding: 18px;
+
     margin: 0 auto 15px;
+
     text-align: center;
+
     line-height: 2;
+
     max-width: 750px;
+
+    box-shadow:
+        0 3px 12px rgba(0,0,0,0.06);
 }
+
 
 .top-message p {
+
     margin: 0;
+
     font-size: 18px;
+
 }
 
 
-/* =========================
+/* =========================================
    الإهداء
-========================= */
+========================================= */
 
 .dedication {
-    background: #ffffff;
+
+    background: rgba(255,255,255,0.94);
+
     border: 1px solid #b8aa96;
-    border-radius: 8px;
+
+    border-radius: 10px;
+
     padding: 14px;
+
     margin: 0 auto 20px;
+
     text-align: center;
+
     max-width: 550px;
+
     font-size: 16px;
+
     line-height: 2;
+
+    box-shadow:
+        0 3px 12px rgba(0,0,0,0.05);
 }
 
 
-/* =========================
+/* =========================================
    العنوان
-========================= */
+========================================= */
 
 h1 {
+
     text-align: center;
+
     color: #14532d;
+
     font-size: 38px;
+
     margin: 20px 0 25px;
+
+    text-shadow:
+        0 1px 2px rgba(255,255,255,0.8);
 }
 
 
-/* =========================
-   الصفحة الرئيسية
-========================= */
+/* =========================================
+   القائمة الرئيسية
+========================================= */
 
 .main-menu {
+
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
     gap: 18px;
+
     margin: 25px auto;
+
 }
+
 
 .menu-card {
-    background: #ffffff;
+
+    background: rgba(255,255,255,0.94);
+
     border: 2px solid #ddd5ca;
+
     border-radius: 14px;
+
     padding: 28px 15px;
+
     text-align: center;
+
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.08);
+
     transition: 0.2s;
+
 }
+
 
 .menu-card:hover {
+
     transform: translateY(-3px);
+
     border-color: #198754;
+
 }
+
 
 .menu-icon {
+
     font-size: 45px;
+
     margin-bottom: 10px;
+
 }
+
 
 .menu-title {
+
     color: #14532d;
+
     font-size: 23px;
+
     font-weight: bold;
+
     margin-bottom: 8px;
+
 }
+
 
 .menu-description {
+
     color: #666;
+
     font-size: 15px;
+
     line-height: 1.8;
+
 }
 
 
-/* =========================
+/* =========================================
    الأقسام
-========================= */
+========================================= */
 
 .section {
+
     display: none;
+
 }
+
 
 .section.active {
+
     display: block;
+
 }
+
 
 .section-title {
+
     text-align: center;
+
     color: #14532d;
+
     font-size: 31px;
+
     margin: 20px 0 10px;
+
 }
+
 
 .section-subtitle {
+
     text-align: center;
-    color: #777;
+
+    color: #555;
+
     margin-bottom: 25px;
+
 }
 
 
-/* =========================
-   أزرار الرجوع
-========================= */
+/* =========================================
+   زر الرجوع
+========================================= */
 
 .back-button {
+
     display: block;
+
     margin: 10px auto 20px;
+
     background: #14532d;
+
     color: white;
+
     border: none;
+
     border-radius: 8px;
+
     padding: 11px 25px;
+
     font-size: 17px;
+
     cursor: pointer;
+
 }
 
 
-/* =========================
+/* =========================================
    عدادات ذكر الله
-========================= */
+========================================= */
 
 .zekr-grid {
+
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
     gap: 18px;
+
     margin-top: 20px;
+
 }
+
 
 .counter-box {
-    background: #ffffff;
+
+    background: rgba(255,255,255,0.95);
+
     border: 1px solid #ddd5ca;
+
     border-radius: 10px;
+
     padding: 18px;
+
     text-align: center;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,0.07);
+
 }
+
 
 .zekr-name {
+
     min-height: 55px;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     color: #14532d;
+
     font-size: 21px;
+
     font-weight: bold;
+
     line-height: 1.6;
+
 }
+
 
 .counter {
+
     background: #faf9f6;
+
     border: 1px solid #e5ddd2;
+
     border-radius: 8px;
+
     font-size: 38px;
+
     font-weight: bold;
+
     color: #176b3a;
+
     padding: 8px;
+
     margin: 12px 0;
+
 }
+
 
 .count-button {
+
     width: 100%;
+
     height: 50px;
+
     border: none;
+
     border-radius: 8px;
+
     background: #198754;
+
     color: white;
+
     font-size: 19px;
+
     font-weight: bold;
+
     cursor: pointer;
+
 }
+
 
 .count-button:active {
+
     transform: scale(0.97);
+
 }
+
 
 .reset-button {
+
     width: 100%;
+
     height: 42px;
+
     margin-top: 8px;
+
     border: 1px solid #dc3545;
+
     border-radius: 8px;
+
     background: white;
+
     color: #dc3545;
+
     font-size: 16px;
+
     font-weight: bold;
+
     cursor: pointer;
+
 }
+
+
+.reset-button:hover {
+
+    background: #dc3545;
+
+    color: white;
+
+}
+
 
 .baqiyat {
+
     grid-column: 1 / -1;
+
 }
 
 
-/* =========================
+/* =========================================
    إجمالي الأذكار
-========================= */
+========================================= */
 
 .total-box {
+
     margin: 25px auto 10px;
+
     max-width: 600px;
-    background: #f3faf5;
+
+    background: rgba(243,250,245,0.96);
+
     border: 2px solid #14532d;
+
     border-radius: 12px;
+
     padding: 20px;
+
     text-align: center;
+
+    box-shadow:
+        0 4px 14px rgba(0,0,0,0.08);
+
 }
+
 
 .total-title {
+
     color: #14532d;
+
     font-size: 22px;
+
     font-weight: bold;
+
     margin-bottom: 10px;
+
 }
+
 
 .total-counter {
+
     font-size: 45px;
+
     font-weight: bold;
+
     color: #176b3a;
+
     background: #ffffff;
+
     border: 1px solid #ddd5ca;
+
     border-radius: 10px;
+
     padding: 10px;
+
     margin: 10px 0 15px;
+
 }
+
 
 .reset-all-button {
+
     width: 100%;
+
     max-width: 350px;
+
     height: 45px;
+
     border: none;
+
     border-radius: 8px;
+
     background: #dc3545;
+
     color: white;
+
     font-size: 17px;
+
     font-weight: bold;
+
     cursor: pointer;
+
 }
 
 
-/* =========================
+/* =========================================
    أذكار الصباح والمساء
-========================= */
+========================================= */
 
 .adhkar-progress-box {
+
     max-width: 700px;
+
     margin: 0 auto 20px;
-    background: #f3faf5;
+
+    background: rgba(243,250,245,0.96);
+
     border: 1px solid #c9dfcf;
+
     border-radius: 12px;
+
     padding: 18px;
+
     text-align: center;
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,0.06);
+
 }
+
 
 .progress-text {
+
     color: #14532d;
+
     font-size: 19px;
+
     font-weight: bold;
+
     margin-bottom: 10px;
+
 }
+
 
 .progress-bar {
+
     width: 100%;
+
     height: 13px;
+
     background: #e5e5e5;
+
     border-radius: 20px;
+
     overflow: hidden;
+
 }
+
 
 .progress-fill {
+
     height: 100%;
+
     width: 0%;
+
     background: #198754;
+
     transition: width 0.3s;
+
 }
 
 
-/* =========================
+/* =========================================
    بطاقة الذكر
-========================= */
+========================================= */
 
 .adhkar-card {
+
     max-width: 800px;
+
     margin: 15px auto;
-    background: #ffffff;
+
+    background: rgba(255,255,255,0.96);
+
     border: 1px solid #ddd5ca;
+
     border-radius: 14px;
+
     padding: 22px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.08);
+
     text-align: center;
+
 }
+
 
 .adhkar-number {
+
     color: #777;
+
     font-size: 15px;
+
     margin-bottom: 15px;
+
 }
+
 
 .adhkar-text {
+
     color: #222;
+
     font-size: 21px;
+
     line-height: 2.1;
+
     margin-bottom: 18px;
+
 }
+
 
 .adhkar-reference {
+
     color: #777;
+
     font-size: 14px;
+
     margin-bottom: 15px;
+
 }
+
 
 .adhkar-count {
+
     font-size: 34px;
+
     font-weight: bold;
+
     color: #176b3a;
+
     margin: 10px;
+
 }
+
 
 .adhkar-button {
+
     width: 100%;
+
     max-width: 500px;
+
     height: 52px;
+
     background: #198754;
+
     color: white;
+
     border: none;
+
     border-radius: 9px;
+
     font-size: 19px;
+
     font-weight: bold;
+
     cursor: pointer;
+
 }
+
 
 .next-button {
+
     width: 100%;
+
     max-width: 500px;
+
     height: 48px;
+
     margin-top: 10px;
+
     background: #14532d;
+
     color: white;
+
     border: none;
+
     border-radius: 9px;
+
     font-size: 17px;
+
     font-weight: bold;
+
     cursor: pointer;
+
 }
+
 
 .adhkar-reset {
+
     display: block;
+
     margin: 20px auto;
+
     background: white;
+
     color: #dc3545;
+
     border: 1px solid #dc3545;
+
     border-radius: 8px;
+
     padding: 10px 25px;
+
     font-size: 16px;
+
 }
 
 
-/* =========================
-   رسالة الإكمال
-========================= */
+/* =========================================
+   إكمال الأذكار
+========================================= */
 
 .completed-message {
+
     display: none;
+
     max-width: 700px;
+
     margin: 25px auto;
-    background: #f3faf5;
+
+    background: rgba(243,250,245,0.97);
+
     border: 2px solid #198754;
+
     border-radius: 14px;
+
     padding: 30px;
+
     text-align: center;
+
 }
+
 
 .completed-message h2 {
+
     color: #14532d;
+
 }
+
 
 .completed-message p {
+
     color: #555;
+
     font-size: 17px;
+
 }
 
 
-/* =========================
+/* =========================================
    المشاركة
-========================= */
+========================================= */
 
 .share-container {
+
     text-align: center;
+
     margin: 25px 0 30px;
+
 }
+
 
 .share-button {
+
     background: #128C7E;
+
     color: white;
+
     border: none;
+
     border-radius: 9px;
+
     padding: 13px 35px;
+
     font-size: 18px;
+
     font-weight: bold;
+
     cursor: pointer;
+
 }
 
 
-/* =========================
+/* =========================================
    الفوتر
-========================= */
+========================================= */
 
 .footer {
+
     text-align: center;
+
     color: #777;
+
     font-size: 14px;
+
     margin-top: 25px;
+
     padding-bottom: 15px;
+
 }
 
 
-/* =========================
-   الموبايل
-========================= */
+/* =========================================
+   الأجهزة اللوحية والموبايل
+========================================= */
 
 @media (max-width: 800px) {
 
     body {
+
         padding: 10px;
+
+        background-attachment: scroll;
+
     }
+
 
     h1 {
+
         font-size: 30px;
+
     }
+
 
     .main-menu {
+
         grid-template-columns: 1fr;
+
         gap: 12px;
+
     }
+
 
     .menu-card {
+
         padding: 22px;
+
     }
+
 
     .zekr-grid {
-        grid-template-columns: repeat(2, 1fr);
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
         gap: 12px;
+
     }
+
 
     .counter-box {
+
         padding: 13px;
+
     }
+
 
     .zekr-name {
+
         font-size: 19px;
+
     }
+
 
     .count-button {
+
         font-size: 17px;
+
     }
 
+
     .adhkar-text {
+
         font-size: 19px;
+
     }
+
 }
 
 
 @media (max-width: 550px) {
 
     .zekr-grid {
+
         grid-template-columns: 1fr;
+
     }
+
 
     .baqiyat {
+
         grid-column: auto;
+
     }
+
 
     .top-message p {
+
         font-size: 16px;
+
     }
+
 
     .zekr-name {
+
         font-size: 20px;
+
     }
+
 
     .counter {
+
         font-size: 34px;
+
     }
+
 
     .total-counter {
+
         font-size: 40px;
+
     }
 
+
     .adhkar-text {
+
         font-size: 18px;
+
     }
 
 }
@@ -572,20 +998,26 @@ h1 {
 <div class="page">
 
 
-<!-- =========================
+<!-- =========================================
      الرسالة
-========================= -->
+========================================= -->
 
 <div class="top-message">
 
 <p>
+
 اجعل التسبيح والاستغفار من عاداتك،
 عسى الله أن يكرمنا وإياكم بفضله ورحمته،
 ويجعل ألسنتنا عامرةً بذكره وقلوبنا مطمئنةً بقربه. 🤲🏻
+
 </p>
 
 </div>
 
+
+<!-- =========================================
+     الإهداء
+========================================= -->
 
 <div class="dedication">
 
@@ -598,12 +1030,14 @@ h1 {
 </div>
 
 
-<h1>ذكر الله 🤲</h1>
+<h1>
+ذكر الله 🤲
+</h1>
 
 
-<!-- =========================
-     القائمة الرئيسية
-========================= -->
+<!-- =========================================
+     الرئيسية
+========================================= -->
 
 <div id="homeSection">
 
@@ -614,7 +1048,9 @@ h1 {
 <div class="menu-card"
      onclick="showSection('zekrSection')">
 
-<div class="menu-icon">🌿</div>
+<div class="menu-icon">
+🌿
+</div>
 
 <div class="menu-title">
 ذكر الله
@@ -630,7 +1066,9 @@ h1 {
 <div class="menu-card"
      onclick="showSection('morningSection')">
 
-<div class="menu-icon">🌅</div>
+<div class="menu-icon">
+🌅
+</div>
 
 <div class="menu-title">
 أذكار الصباح
@@ -646,7 +1084,9 @@ h1 {
 <div class="menu-card"
      onclick="showSection('eveningSection')">
 
-<div class="menu-icon">🌙</div>
+<div class="menu-icon">
+🌙
+</div>
 
 <div class="menu-title">
 أذكار المساء
@@ -677,10 +1117,9 @@ h1 {
 </div>
 
 
-
-<!-- ==================================================
+<!-- =========================================
      قسم ذكر الله
-================================================== -->
+========================================= -->
 
 <div id="zekrSection"
      class="section">
@@ -730,7 +1169,6 @@ h1 {
 </div>
 
 
-
 <div class="counter-box">
 
 <div class="zekr-name">
@@ -757,7 +1195,6 @@ h1 {
 </button>
 
 </div>
-
 
 
 <div class="counter-box">
@@ -792,7 +1229,6 @@ h1 {
 </div>
 
 
-
 <div class="counter-box">
 
 <div class="zekr-name">
@@ -819,7 +1255,6 @@ h1 {
 </button>
 
 </div>
-
 
 
 <div class="counter-box">
@@ -850,7 +1285,6 @@ h1 {
 </div>
 
 
-
 <div class="counter-box">
 
 <div class="zekr-name">
@@ -877,7 +1311,6 @@ h1 {
 </button>
 
 </div>
-
 
 
 <div class="counter-box baqiyat">
@@ -913,7 +1346,6 @@ h1 {
 </button>
 
 </div>
-
 
 
 <div class="counter-box baqiyat">
@@ -971,10 +1403,9 @@ h1 {
 </div>
 
 
-
-<!-- ==================================================
+<!-- =========================================
      أذكار الصباح
-================================================== -->
+========================================= -->
 
 <div id="morningSection"
      class="section">
@@ -992,6 +1423,7 @@ h1 {
 🌅 أذكار الصباح
 </h2>
 
+
 <div class="section-subtitle">
 حصن يومك بذكر الله 🤲
 </div>
@@ -1005,6 +1437,7 @@ h1 {
 الذكر 1 من 10
 
 </div>
+
 
 <div class="progress-bar">
 
@@ -1048,10 +1481,9 @@ h1 {
 </div>
 
 
-
-<!-- ==================================================
+<!-- =========================================
      أذكار المساء
-================================================== -->
+========================================= -->
 
 <div id="eveningSection"
      class="section">
@@ -1069,6 +1501,7 @@ h1 {
 🌙 أذكار المساء
 </h2>
 
+
 <div class="section-subtitle">
 اختم يومك بذكر الله 🤲
 </div>
@@ -1082,6 +1515,7 @@ h1 {
 الذكر 1 من 10
 
 </div>
+
 
 <div class="progress-bar">
 
@@ -1125,6 +1559,9 @@ h1 {
 </div>
 
 
+<!-- =========================================
+     الفوتر
+========================================= -->
 
 <div class="footer">
 
@@ -1136,18 +1573,18 @@ h1 {
 </div>
 
 
-
 <script>
 
 
-/* ==================================================
+/* =========================================
    التنقل بين الأقسام
-================================================== */
+========================================= */
 
 function showSection(sectionId) {
 
     const sections =
         document.querySelectorAll(".section");
+
 
     sections.forEach(function(section) {
 
@@ -1156,14 +1593,16 @@ function showSection(sectionId) {
     });
 
 
-    document.getElementById("homeSection").style.display =
-        "none";
+    document.getElementById("homeSection")
+        .style.display = "none";
 
 
     if (sectionId === "homeSection") {
 
-        document.getElementById("homeSection").style.display =
-            "block";
+        document.getElementById("homeSection")
+            .style.display = "block";
+
+        window.scrollTo(0, 0);
 
         return;
 
@@ -1173,13 +1612,15 @@ function showSection(sectionId) {
     document.getElementById(sectionId)
         .classList.add("active");
 
+
+    window.scrollTo(0, 0);
+
 }
 
 
-
-/* ==================================================
+/* =========================================
    عدادات ذكر الله
-================================================== */
+========================================= */
 
 let counters = {
 
@@ -1200,12 +1641,14 @@ function loadCounters() {
     const saved =
         localStorage.getItem("zekrCounters");
 
+
     if (saved) {
 
         try {
 
             const data =
                 JSON.parse(saved);
+
 
             for (let i = 1; i <= 8; i++) {
 
@@ -1217,13 +1660,16 @@ function loadCounters() {
 
             }
 
-        } catch (error) {
+        }
+
+        catch (error) {
 
             console.log(error);
 
         }
 
     }
+
 
     updateAllCounters();
 
@@ -1233,8 +1679,11 @@ function loadCounters() {
 function saveCounters() {
 
     localStorage.setItem(
+
         "zekrCounters",
+
         JSON.stringify(counters)
+
     );
 
 }
@@ -1244,9 +1693,12 @@ function increaseCounter(number) {
 
     counters[number]++;
 
+
     updateCounter(number);
 
+
     updateTotal();
+
 
     saveCounters();
 
@@ -1256,7 +1708,9 @@ function increaseCounter(number) {
 function updateCounter(number) {
 
     document.getElementById(
+
         "counter" + number
+
     ).innerText =
         counters[number];
 
@@ -1271,6 +1725,7 @@ function updateAllCounters() {
 
     }
 
+
     updateTotal();
 
 }
@@ -1280,11 +1735,13 @@ function updateTotal() {
 
     let total = 0;
 
+
     for (let i = 1; i <= 8; i++) {
 
         total += counters[i];
 
     }
+
 
     document.getElementById(
         "totalCounter"
@@ -1297,9 +1754,12 @@ function resetCounter(number) {
 
     counters[number] = 0;
 
+
     updateCounter(number);
 
+
     updateTotal();
+
 
     saveCounters();
 
@@ -1308,11 +1768,14 @@ function resetCounter(number) {
 
 function resetAllCounters() {
 
-    if (!confirm("هل تريد تصفير جميع الأذكار؟")) {
+    if (!confirm(
+        "هل تريد تصفير جميع الأذكار؟"
+    )) {
 
         return;
 
     }
+
 
     for (let i = 1; i <= 8; i++) {
 
@@ -1320,21 +1783,18 @@ function resetAllCounters() {
 
     }
 
+
     updateAllCounters();
+
 
     saveCounters();
 
 }
 
 
-
-/* ==================================================
+/* =========================================
    أذكار الصباح
-================================================== */
-
-/*
-   يتم حفظ التقدم على الجهاز.
-*/
+========================================= */
 
 const morningAdhkar = [
 
@@ -1431,10 +1891,9 @@ count: 10
 ];
 
 
-
-/* ==================================================
+/* =========================================
    أذكار المساء
-================================================== */
+========================================= */
 
 const eveningAdhkar = [
 
@@ -1531,14 +1990,14 @@ count: 10
 ];
 
 
-
-/* ==================================================
+/* =========================================
    حالة أذكار الصباح والمساء
-================================================== */
+========================================= */
 
 let morningState = {
 
     index: 0,
+
     count: 0
 
 };
@@ -1547,23 +2006,28 @@ let morningState = {
 let eveningState = {
 
     index: 0,
+
     count: 0
 
 };
 
 
-
-/* ==================================================
+/* =========================================
    تحميل التقدم
-================================================== */
+========================================= */
 
 function loadAdhkarProgress() {
 
     const morningSaved =
-        localStorage.getItem("morningAdhkarState");
+        localStorage.getItem(
+            "morningAdhkarState"
+        );
+
 
     const eveningSaved =
-        localStorage.getItem("eveningAdhkarState");
+        localStorage.getItem(
+            "eveningAdhkarState"
+        );
 
 
     if (morningSaved) {
@@ -1573,7 +2037,9 @@ function loadAdhkarProgress() {
             morningState =
                 JSON.parse(morningSaved);
 
-        } catch (e) {}
+        }
+
+        catch (e) {}
 
     }
 
@@ -1585,7 +2051,9 @@ function loadAdhkarProgress() {
             eveningState =
                 JSON.parse(eveningSaved);
 
-        } catch (e) {}
+        }
+
+        catch (e) {}
 
     }
 
@@ -1597,25 +2065,32 @@ function loadAdhkarProgress() {
 }
 
 
-
-/* ==================================================
+/* =========================================
    حفظ التقدم
-================================================== */
+========================================= */
 
 function saveAdhkarProgress(type) {
 
     if (type === "morning") {
 
         localStorage.setItem(
+
             "morningAdhkarState",
+
             JSON.stringify(morningState)
+
         );
 
-    } else {
+    }
+
+    else {
 
         localStorage.setItem(
+
             "eveningAdhkarState",
+
             JSON.stringify(eveningState)
+
         );
 
     }
@@ -1623,10 +2098,9 @@ function saveAdhkarProgress(type) {
 }
 
 
-
-/* ==================================================
+/* =========================================
    عرض الذكر
-================================================== */
+========================================= */
 
 function renderAdhkar(type) {
 
@@ -1675,7 +2149,8 @@ function renderAdhkar(type) {
         progressText.innerText =
             "تم إكمال جميع الأذكار";
 
-        progressFill.style.width = "100%";
+        progressFill.style.width =
+            "100%";
 
         return;
 
@@ -1691,19 +2166,22 @@ function renderAdhkar(type) {
         list[state.index];
 
 
-    const currentCount =
-        state.count;
-
-
     progressText.innerText =
+
         "الذكر " +
+
         (state.index + 1) +
+
         " من " +
+
         list.length;
 
 
     const progress =
-        (state.index / list.length) * 100;
+
+        (state.index / list.length) *
+
+        100;
 
 
     progressFill.style.width =
@@ -1735,7 +2213,7 @@ function renderAdhkar(type) {
 
         <div class="adhkar-count">
 
-            ${currentCount} / ${item.count}
+            ${state.count} / ${item.count}
 
         </div>
 
@@ -1762,10 +2240,9 @@ function renderAdhkar(type) {
 }
 
 
-
-/* ==================================================
-   عد الذكر
-================================================== */
+/* =========================================
+   عد أذكار الصباح والمساء
+========================================= */
 
 function countAdhkar(type) {
 
@@ -1797,23 +2274,22 @@ function countAdhkar(type) {
 
     if (state.count >= item.count) {
 
-        state.count =
-            item.count;
+        state.count = item.count;
 
     }
 
 
     saveAdhkarProgress(type);
 
+
     renderAdhkar(type);
 
 }
 
 
-
-/* ==================================================
-   الذكر التالي
-================================================== */
+/* =========================================
+   الانتقال للذكر التالي
+========================================= */
 
 function nextAdhkar(type) {
 
@@ -1843,6 +2319,7 @@ function nextAdhkar(type) {
     if (state.count < item.count) {
 
         const confirmNext =
+
             confirm(
                 "لم تكمل عدد مرات هذا الذكر. هل تريد الانتقال للذكر التالي؟"
             );
@@ -1864,23 +2341,28 @@ function nextAdhkar(type) {
 
     saveAdhkarProgress(type);
 
+
     renderAdhkar(type);
 
 }
 
 
-
-/* ==================================================
-   إعادة الأذكار
-================================================== */
+/* =========================================
+   إعادة أذكار الصباح أو المساء
+========================================= */
 
 function resetAdhkar(type) {
 
-    if (!confirm(
+    const message =
+
         type === "morning"
+
             ? "هل تريد إعادة أذكار الصباح من البداية؟"
-            : "هل تريد إعادة أذكار المساء من البداية؟"
-    )) {
+
+            : "هل تريد إعادة أذكار المساء من البداية؟";
+
+
+    if (!confirm(message)) {
 
         return;
 
@@ -1892,15 +2374,19 @@ function resetAdhkar(type) {
         morningState = {
 
             index: 0,
+
             count: 0
 
         };
 
-    } else {
+    }
+
+    else {
 
         eveningState = {
 
             index: 0,
+
             count: 0
 
         };
@@ -1910,15 +2396,15 @@ function resetAdhkar(type) {
 
     saveAdhkarProgress(type);
 
+
     renderAdhkar(type);
 
 }
 
 
-
-/* ==================================================
+/* =========================================
    المشاركة
-================================================== */
+========================================= */
 
 function sharePage() {
 
@@ -1927,8 +2413,11 @@ function sharePage() {
 
 
     const text =
+
         "ذكر الله 🤲\n" +
+
         "اجعل التسبيح والاستغفار وأذكار الصباح والمساء " +
+
         "من عاداتك اليومية، واحتسب الأجر مع كل ذكر.";
 
 
@@ -1942,7 +2431,9 @@ function sharePage() {
 
             url: url
 
-        }).catch(function(error) {
+        })
+
+        .catch(function(error) {
 
             console.log(
                 "تم إلغاء المشاركة",
@@ -1951,13 +2442,22 @@ function sharePage() {
 
         });
 
-    } else {
+    }
+
+    else {
 
         window.open(
 
             "https://wa.me/?text=" +
+
             encodeURIComponent(
-                text + "\n" + url
+
+                text +
+
+                "\n" +
+
+                url
+
             ),
 
             "_blank"
@@ -1969,10 +2469,9 @@ function sharePage() {
 }
 
 
-
-/* ==================================================
+/* =========================================
    Service Worker
-================================================== */
+========================================= */
 
 if ("serviceWorker" in navigator) {
 
@@ -2007,10 +2506,9 @@ if ("serviceWorker" in navigator) {
 }
 
 
-
-/* ==================================================
-   تشغيل التطبيق
-================================================== */
+/* =========================================
+   بدء التطبيق
+========================================= */
 
 loadCounters();
 
