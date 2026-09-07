@@ -1,4 +1,4 @@
-const CACHE_NAME = "zekr-v2";
+const CACHE_NAME = "zekr-v4";
 
 const FILES_TO_CACHE = [
     "/zekr/",
