@@ -50,10 +50,6 @@ body {
 
     color: #222;
 
-    /*
-       الخلفية الجديدة
-    */
-
     background-color: #f8f4e8;
 
     background-image:
@@ -707,33 +703,6 @@ h1 {
     border-radius: 9px;
 
     font-size: 19px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-}
-
-
-.next-button {
-
-    width: 100%;
-
-    max-width: 500px;
-
-    height: 48px;
-
-    margin-top: 10px;
-
-    background: #14532d;
-
-    color: white;
-
-    border: none;
-
-    border-radius: 9px;
-
-    font-size: 17px;
 
     font-weight: bold;
 
@@ -1559,10 +1528,6 @@ h1 {
 </div>
 
 
-<!-- =========================================
-     الفوتر
-========================================= -->
-
 <div class="footer">
 
 🤲 اللهم اجعلها صدقة جارية وأجرًا لكل من ذكر الله
@@ -1991,7 +1956,7 @@ count: 10
 
 
 /* =========================================
-   حالة أذكار الصباح والمساء
+   حالة الأذكار
 ========================================= */
 
 let morningState = {
@@ -2177,6 +2142,10 @@ function renderAdhkar(type) {
         list.length;
 
 
+    /*
+       نسبة التقدم تعتمد على الذكر الحالي
+    */
+
     const progress =
 
         (state.index / list.length) *
@@ -2226,22 +2195,13 @@ function renderAdhkar(type) {
 
         </button>
 
-
-        <button
-            class="next-button"
-            onclick="nextAdhkar('${type}')">
-
-            ➡ الذكر التالي
-
-        </button>
-
     `;
 
 }
 
 
 /* =========================================
-   عد أذكار الصباح والمساء
+   العد التلقائي والانتقال
 ========================================= */
 
 function countAdhkar(type) {
@@ -2272,75 +2232,60 @@ function countAdhkar(type) {
     state.count++;
 
 
-    if (state.count >= item.count) {
-
-        state.count = item.count;
-
-    }
-
+    /*
+       حفظ العدد
+    */
 
     saveAdhkarProgress(type);
 
 
-    renderAdhkar(type);
+    /*
+       إذا اكتمل العدد المطلوب
+    */
 
-}
+    if (state.count >= item.count) {
 
-
-/* =========================================
-   الانتقال للذكر التالي
-========================================= */
-
-function nextAdhkar(type) {
-
-    const list =
-        type === "morning"
-            ? morningAdhkar
-            : eveningAdhkar;
+        state.count =
+            item.count;
 
 
-    const state =
-        type === "morning"
-            ? morningState
-            : eveningState;
+        saveAdhkarProgress(type);
 
 
-    const item =
-        list[state.index];
+        /*
+           عرض العدد النهائي أولاً
+        */
+
+        renderAdhkar(type);
 
 
-    if (!item) {
+        /*
+           الانتقال تلقائيًا بعد نصف ثانية
+        */
+
+        setTimeout(function() {
+
+            state.index++;
+
+            state.count = 0;
+
+
+            saveAdhkarProgress(type);
+
+
+            renderAdhkar(type);
+
+        }, 500);
+
 
         return;
 
     }
 
 
-    if (state.count < item.count) {
-
-        const confirmNext =
-
-            confirm(
-                "لم تكمل عدد مرات هذا الذكر. هل تريد الانتقال للذكر التالي؟"
-            );
-
-
-        if (!confirmNext) {
-
-            return;
-
-        }
-
-    }
-
-
-    state.index++;
-
-    state.count = 0;
-
-
-    saveAdhkarProgress(type);
-
+    /*
+       تحديث العداد فقط
+    */
 
     renderAdhkar(type);
 
@@ -2348,7 +2293,7 @@ function nextAdhkar(type) {
 
 
 /* =========================================
-   إعادة أذكار الصباح أو المساء
+   إعادة أذكار الصباح والمساء
 ========================================= */
 
 function resetAdhkar(type) {
@@ -2507,7 +2452,7 @@ if ("serviceWorker" in navigator) {
 
 
 /* =========================================
-   بدء التطبيق
+   تشغيل التطبيق
 ========================================= */
 
 loadCounters();
