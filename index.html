@@ -968,7 +968,7 @@ h1 {
 <div class="menu-icon">🌙</div>
 
 <div class="menu-title">
-دعاء النوم
+أذكار النوم
 </div>
 
 <div class="menu-description">
@@ -988,7 +988,7 @@ h1 {
 </div>
 
 <div class="menu-description">
-الحمد لله على نعمة الحياة
+ابدأ يومك بحمد الله
 </div>
 
 </div>
@@ -1631,7 +1631,7 @@ h1 {
 
 
 <!-- =========================================
-     دعاء النوم
+     أذكار النوم
 ========================================= -->
 
 <div id="sleepSection"
@@ -1645,56 +1645,53 @@ h1 {
 </button>
 
 <h2 class="section-title">
-🌙 دعاء النوم
+🌙 أذكار النوم
 </h2>
 
 <div class="section-subtitle">
-اذكر الله قبل نومك 🤲
+اختم يومك بذكر الله 🤲
 </div>
 
-<div class="adhkar-card">
+<div class="adhkar-progress-box">
 
-<div class="adhkar-number">
-دعاء النوم
-</div>
+<div class="progress-text"
+     id="sleepProgressText">
 
-<div class="adhkar-text">
-
-باسمك اللهم أموت وأحيا.
+الذكر 1 من 8
 
 </div>
 
-<div class="adhkar-reference">
-عدد المرات: مرة واحدة
+<div class="progress-bar">
+
+<div class="progress-fill"
+     id="sleepProgressFill">
 </div>
 
-<div class="adhkar-count">
-1 / 1
 </div>
 
-<button class="adhkar-button"
-        onclick="completeSimpleDua('sleep')">
+</div>
 
-☝ تم الدعاء
-
-</button>
-
+<div id="sleepCard"
+     class="adhkar-card">
 </div>
 
 <button class="adhkar-reset"
-        onclick="resetSimpleDua('sleep')">
+        onclick="resetAdhkar('sleep')">
 
-↻ إعادة الدعاء
+↻ إعادة أذكار النوم
 
 </button>
 
 <div id="sleepCompleted"
      class="completed-message">
 
-<h2>🌙 تصبح على خير</h2>
+<h2>
+🌙 أحسنت!
+</h2>
 
 <p>
-نسأل الله أن يحفظك ويبارك لك في نومك.
+تم إكمال أذكار النوم.
+نسأل الله أن يحفظك ويرعاك.
 </p>
 
 </div>
@@ -1721,7 +1718,7 @@ h1 {
 </h2>
 
 <div class="section-subtitle">
-الحمد لله الذي أحيانا
+ابدأ يومك بذكر الله 🤲
 </div>
 
 <div class="adhkar-card">
@@ -1764,7 +1761,9 @@ h1 {
 <div id="wakeCompleted"
      class="completed-message">
 
-<h2>🌅 صباح الخير</h2>
+<h2>
+🌅 أحسنت!
+</h2>
 
 <p>
 الحمد لله على نعمة الحياة.
@@ -2272,22 +2271,123 @@ count: 1
 
 
 /* =========================================
+   أذكار النوم
+========================================= */
+
+const sleepAdhkar = [
+
+{
+
+text:
+"آية الكرسي: الله لا إله إلا هو الحي القيوم، لا تأخذه سنة ولا نوم، له ما في السماوات وما في الأرض، من ذا الذي يشفع عنده إلا بإذنه، يعلم ما بين أيديهم وما خلفهم، ولا يحيطون بشيء من علمه إلا بما شاء، وسع كرسيه السماوات والأرض، ولا يؤوده حفظهما، وهو العلي العظيم.",
+
+count: 1
+
+},
+
+{
+
+text:
+"قراءة سورة الإخلاص.",
+
+count: 3
+
+},
+
+{
+
+text:
+"قراءة سورة الفلق.",
+
+count: 3
+
+},
+
+{
+
+text:
+"قراءة سورة الناس.",
+
+count: 3
+
+},
+
+{
+
+text:
+"سبحان الله",
+
+count: 33
+
+},
+
+{
+
+text:
+"الحمد لله",
+
+count: 33
+
+},
+
+{
+
+text:
+"الله أكبر",
+
+count: 34
+
+},
+
+{
+
+text:
+"باسمك اللهم أموت وأحيا.",
+
+count: 1
+
+}
+
+];
+
+
+/* =========================================
    حالات الأذكار
 ========================================= */
 
 let morningState = {
+
     index: 0,
+
     count: 0
+
 };
+
 
 let eveningState = {
+
     index: 0,
+
     count: 0
+
 };
 
+
 let prayerState = {
+
     index: 0,
+
     count: 0
+
+};
+
+
+let sleepState = {
+
+    index: 0,
+
+    count: 0
+
 };
 
 
@@ -2312,12 +2412,19 @@ function loadAdhkarProgress() {
             "prayerAdhkarState"
         );
 
+    const sleepSaved =
+        localStorage.getItem(
+            "sleepAdhkarState"
+        );
+
 
     if (morningSaved) {
 
         try {
+
             morningState =
                 JSON.parse(morningSaved);
+
         }
 
         catch (e) {}
@@ -2328,8 +2435,10 @@ function loadAdhkarProgress() {
     if (eveningSaved) {
 
         try {
+
             eveningState =
                 JSON.parse(eveningSaved);
+
         }
 
         catch (e) {}
@@ -2340,8 +2449,24 @@ function loadAdhkarProgress() {
     if (prayerSaved) {
 
         try {
+
             prayerState =
                 JSON.parse(prayerSaved);
+
+        }
+
+        catch (e) {}
+
+    }
+
+
+    if (sleepSaved) {
+
+        try {
+
+            sleepState =
+                JSON.parse(sleepSaved);
+
         }
 
         catch (e) {}
@@ -2355,6 +2480,8 @@ function loadAdhkarProgress() {
 
     renderAdhkar("prayer");
 
+    renderAdhkar("sleep");
+
 }
 
 
@@ -2367,8 +2494,11 @@ function saveAdhkarProgress(type) {
     if (type === "morning") {
 
         localStorage.setItem(
+
             "morningAdhkarState",
+
             JSON.stringify(morningState)
+
         );
 
     }
@@ -2376,8 +2506,11 @@ function saveAdhkarProgress(type) {
     else if (type === "evening") {
 
         localStorage.setItem(
+
             "eveningAdhkarState",
+
             JSON.stringify(eveningState)
+
         );
 
     }
@@ -2385,8 +2518,23 @@ function saveAdhkarProgress(type) {
     else if (type === "prayer") {
 
         localStorage.setItem(
+
             "prayerAdhkarState",
+
             JSON.stringify(prayerState)
+
+        );
+
+    }
+
+    else if (type === "sleep") {
+
+        localStorage.setItem(
+
+            "sleepAdhkarState",
+
+            JSON.stringify(sleepState)
+
         );
 
     }
@@ -2405,7 +2553,9 @@ function renderAdhkar(type) {
             ? morningAdhkar
             : type === "evening"
                 ? eveningAdhkar
-                : prayerAdhkar;
+                : type === "prayer"
+                    ? prayerAdhkar
+                    : sleepAdhkar;
 
 
     const state =
@@ -2413,7 +2563,9 @@ function renderAdhkar(type) {
             ? morningState
             : type === "evening"
                 ? eveningState
-                : prayerState;
+                : type === "prayer"
+                    ? prayerState
+                    : sleepState;
 
 
     const card =
@@ -2469,14 +2621,18 @@ function renderAdhkar(type) {
     progressText.innerText =
 
         "الذكر " +
+
         (state.index + 1) +
+
         " من " +
+
         list.length;
 
 
     const progress =
 
         (state.index / list.length) *
+
         100;
 
 
@@ -2492,11 +2648,13 @@ function renderAdhkar(type) {
 
         </div>
 
+
         <div class="adhkar-text">
 
             ${item.text}
 
         </div>
+
 
         <div class="adhkar-reference">
 
@@ -2504,11 +2662,13 @@ function renderAdhkar(type) {
 
         </div>
 
+
         <div class="adhkar-count">
 
             ${state.count} / ${item.count}
 
         </div>
+
 
         <button
             class="adhkar-button"
@@ -2534,7 +2694,9 @@ function countAdhkar(type) {
             ? morningAdhkar
             : type === "evening"
                 ? eveningAdhkar
-                : prayerAdhkar;
+                : type === "prayer"
+                    ? prayerAdhkar
+                    : sleepAdhkar;
 
 
     const state =
@@ -2542,7 +2704,9 @@ function countAdhkar(type) {
             ? morningState
             : type === "evening"
                 ? eveningState
-                : prayerState;
+                : type === "prayer"
+                    ? prayerState
+                    : sleepState;
 
 
     const item =
@@ -2550,7 +2714,9 @@ function countAdhkar(type) {
 
 
     if (!item) {
+
         return;
+
     }
 
 
@@ -2562,7 +2728,9 @@ function countAdhkar(type) {
         state.count =
             item.count;
 
+
         saveAdhkarProgress(type);
+
 
         renderAdhkar(type);
 
@@ -2573,11 +2741,14 @@ function countAdhkar(type) {
 
             state.count = 0;
 
+
             saveAdhkarProgress(type);
+
 
             renderAdhkar(type);
 
         }, 500);
+
 
         return;
 
@@ -2585,6 +2756,7 @@ function countAdhkar(type) {
 
 
     saveAdhkarProgress(type);
+
 
     renderAdhkar(type);
 
@@ -2614,24 +2786,36 @@ function resetAdhkar(type) {
 
     }
 
-    else {
+    else if (type === "prayer") {
 
         message =
             "هل تريد إعادة أذكار الصلاة من البداية؟";
 
     }
 
+    else {
+
+        message =
+            "هل تريد إعادة أذكار النوم من البداية؟";
+
+    }
+
 
     if (!confirm(message)) {
+
         return;
+
     }
 
 
     if (type === "morning") {
 
         morningState = {
+
             index: 0,
+
             count: 0
+
         };
 
     }
@@ -2639,23 +2823,42 @@ function resetAdhkar(type) {
     else if (type === "evening") {
 
         eveningState = {
+
             index: 0,
+
             count: 0
+
+        };
+
+    }
+
+    else if (type === "prayer") {
+
+        prayerState = {
+
+            index: 0,
+
+            count: 0
+
         };
 
     }
 
     else {
 
-        prayerState = {
+        sleepState = {
+
             index: 0,
+
             count: 0
+
         };
 
     }
 
 
     saveAdhkarProgress(type);
+
 
     renderAdhkar(type);
 
@@ -2672,8 +2875,6 @@ const simpleDuaKeys = {
 
     need: "needDuaCompleted",
 
-    sleep: "sleepDuaCompleted",
-
     wake: "wakeDuaCompleted"
 
 };
@@ -2689,6 +2890,7 @@ function loadSimpleDuas() {
                     simpleDuaKeys[type]
                 );
 
+
             if (completed === "true") {
 
                 showSimpleDuaCompleted(type);
@@ -2703,9 +2905,13 @@ function loadSimpleDuas() {
 function completeSimpleDua(type) {
 
     localStorage.setItem(
+
         simpleDuaKeys[type],
+
         "true"
+
     );
+
 
     showSimpleDuaCompleted(type);
 
@@ -2719,17 +2925,24 @@ function showSimpleDuaCompleted(type) {
             "#" + type + "Section .adhkar-card"
         );
 
+
     const completed =
         document.getElementById(
             type + "Completed"
         );
 
+
     if (card) {
+
         card.style.display = "none";
+
     }
 
+
     if (completed) {
+
         completed.style.display = "block";
+
     }
 
 }
@@ -2747,7 +2960,9 @@ function resetSimpleDua(type) {
 
 
     localStorage.removeItem(
+
         simpleDuaKeys[type]
+
     );
 
 
@@ -2756,6 +2971,7 @@ function resetSimpleDua(type) {
             "#" + type + "Section .adhkar-card"
         );
 
+
     const completed =
         document.getElementById(
             type + "Completed"
@@ -2763,11 +2979,16 @@ function resetSimpleDua(type) {
 
 
     if (card) {
+
         card.style.display = "block";
+
     }
 
+
     if (completed) {
+
         completed.style.display = "none";
+
     }
 
 }
@@ -2822,7 +3043,13 @@ function sharePage() {
             "https://wa.me/?text=" +
 
             encodeURIComponent(
-                text + "\n" + url
+
+                text +
+
+                "\n" +
+
+                url
+
             ),
 
             "_blank"
@@ -2841,11 +3068,15 @@ function sharePage() {
 if ("serviceWorker" in navigator) {
 
     window.addEventListener(
+
         "load",
+
         function() {
 
             navigator.serviceWorker.register(
+
                 "/zekr/sw.js"
+
             )
 
             .then(function() {
