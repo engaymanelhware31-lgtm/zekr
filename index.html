@@ -11,7 +11,7 @@
 <title>ذكر الله - الأذكار والتسبيح</title>
 
 <meta name="description"
-      content="ذكر الله - التسبيح والاستغفار وأذكار الصباح والمساء وأذكار الصلاة.">
+      content="ذكر الله - التسبيح والاستغفار وأذكار الصباح والمساء وأذكار الصلاة والأدعية.">
 
 <meta name="robots"
       content="index, follow">
@@ -25,23 +25,14 @@
 <link rel="apple-touch-icon"
       href="/zekr/icon-192.png">
 
-
-<!-- =========================================
-     GoatCounter Analytics
-========================================= -->
-
+<!-- GoatCounter -->
 <script
     data-goatcounter="https://ayman.goatcounter.com/count"
     async
     src="//gc.zgo.at/count.js">
 </script>
 
-
 <style>
-
-/* =========================================
-   الإعدادات العامة
-========================================= */
 
 * {
     box-sizing: border-box;
@@ -54,7 +45,6 @@ html {
 body {
 
     margin: 0;
-
     padding: 15px;
 
     font-family: Arial, sans-serif;
@@ -67,23 +57,16 @@ body {
         url("/zekr/background.png");
 
     background-size: cover;
-
     background-position: center top;
-
     background-repeat: no-repeat;
-
     background-attachment: fixed;
 
     min-height: 100vh;
 }
 
-
 .page {
-
     max-width: 1100px;
-
     margin: auto;
-
 }
 
 
@@ -113,13 +96,9 @@ body {
         0 3px 12px rgba(0,0,0,0.06);
 }
 
-
 .top-message p {
-
     margin: 0;
-
     font-size: 18px;
-
 }
 
 
@@ -165,9 +144,6 @@ h1 {
     font-size: 38px;
 
     margin: 20px 0 25px;
-
-    text-shadow:
-        0 1px 2px rgba(255,255,255,0.8);
 }
 
 
@@ -185,9 +161,7 @@ h1 {
     gap: 18px;
 
     margin: 25px auto;
-
 }
-
 
 .menu-card {
 
@@ -209,7 +183,6 @@ h1 {
     transition: 0.2s;
 }
 
-
 .menu-card:hover {
 
     transform: translateY(-3px);
@@ -217,14 +190,12 @@ h1 {
     border-color: #198754;
 }
 
-
 .menu-icon {
 
     font-size: 45px;
 
     margin-bottom: 10px;
 }
-
 
 .menu-title {
 
@@ -236,7 +207,6 @@ h1 {
 
     margin-bottom: 8px;
 }
-
 
 .menu-description {
 
@@ -253,16 +223,12 @@ h1 {
 ========================================= */
 
 .section {
-
     display: none;
 }
 
-
 .section.active {
-
     display: block;
 }
-
 
 .section-title {
 
@@ -274,7 +240,6 @@ h1 {
 
     margin: 20px 0 10px;
 }
-
 
 .section-subtitle {
 
@@ -328,7 +293,6 @@ h1 {
     margin-top: 20px;
 }
 
-
 .counter-box {
 
     background: rgba(255,255,255,0.95);
@@ -344,7 +308,6 @@ h1 {
     box-shadow:
         0 4px 12px rgba(0,0,0,0.07);
 }
-
 
 .zekr-name {
 
@@ -365,7 +328,6 @@ h1 {
     line-height: 1.6;
 }
 
-
 .counter {
 
     background: #faf9f6;
@@ -384,7 +346,6 @@ h1 {
 
     margin: 12px 0;
 }
-
 
 .count-button {
 
@@ -407,12 +368,9 @@ h1 {
     cursor: pointer;
 }
 
-
 .count-button:active {
-
     transform: scale(0.97);
 }
-
 
 .reset-button {
 
@@ -437,7 +395,6 @@ h1 {
     cursor: pointer;
 }
 
-
 .reset-button:hover {
 
     background: #dc3545;
@@ -445,15 +402,13 @@ h1 {
     color: white;
 }
 
-
 .baqiyat {
-
     grid-column: 1 / -1;
 }
 
 
 /* =========================================
-   إجمالي الأذكار
+   الإجمالي
 ========================================= */
 
 .total-box {
@@ -471,11 +426,7 @@ h1 {
     padding: 20px;
 
     text-align: center;
-
-    box-shadow:
-        0 4px 14px rgba(0,0,0,0.08);
 }
-
 
 .total-title {
 
@@ -487,7 +438,6 @@ h1 {
 
     margin-bottom: 10px;
 }
-
 
 .total-counter {
 
@@ -507,7 +457,6 @@ h1 {
 
     margin: 10px 0 15px;
 }
-
 
 .reset-all-button {
 
@@ -534,7 +483,7 @@ h1 {
 
 
 /* =========================================
-   أذكار الصباح والمساء والصلاة
+   الأذكار والأدعية
 ========================================= */
 
 .adhkar-progress-box {
@@ -552,11 +501,7 @@ h1 {
     padding: 18px;
 
     text-align: center;
-
-    box-shadow:
-        0 4px 12px rgba(0,0,0,0.06);
 }
-
 
 .progress-text {
 
@@ -568,7 +513,6 @@ h1 {
 
     margin-bottom: 10px;
 }
-
 
 .progress-bar {
 
@@ -583,7 +527,6 @@ h1 {
     overflow: hidden;
 }
 
-
 .progress-fill {
 
     height: 100%;
@@ -594,11 +537,6 @@ h1 {
 
     transition: width 0.3s;
 }
-
-
-/* =========================================
-   بطاقة الذكر
-========================================= */
 
 .adhkar-card {
 
@@ -620,7 +558,6 @@ h1 {
     text-align: center;
 }
 
-
 .adhkar-number {
 
     color: #777;
@@ -629,7 +566,6 @@ h1 {
 
     margin-bottom: 15px;
 }
-
 
 .adhkar-text {
 
@@ -642,7 +578,6 @@ h1 {
     margin-bottom: 18px;
 }
 
-
 .adhkar-reference {
 
     color: #777;
@@ -651,7 +586,6 @@ h1 {
 
     margin-bottom: 15px;
 }
-
 
 .adhkar-count {
 
@@ -663,7 +597,6 @@ h1 {
 
     margin: 10px;
 }
-
 
 .adhkar-button {
 
@@ -688,7 +621,6 @@ h1 {
     cursor: pointer;
 }
 
-
 .adhkar-reset {
 
     display: block;
@@ -707,11 +639,6 @@ h1 {
 
     font-size: 16px;
 }
-
-
-/* =========================================
-   إكمال الأذكار
-========================================= */
 
 .completed-message {
 
@@ -732,12 +659,9 @@ h1 {
     text-align: center;
 }
 
-
 .completed-message h2 {
-
     color: #14532d;
 }
-
 
 .completed-message p {
 
@@ -757,7 +681,6 @@ h1 {
 
     margin: 25px 0 30px;
 }
-
 
 .share-button {
 
@@ -798,7 +721,7 @@ h1 {
 
 
 /* =========================================
-   الأجهزة اللوحية والموبايل
+   الموبايل
 ========================================= */
 
 @media (max-width: 900px) {
@@ -807,11 +730,9 @@ h1 {
 
         grid-template-columns:
             repeat(2, 1fr);
-
     }
 
 }
-
 
 @media (max-width: 800px) {
 
@@ -820,23 +741,11 @@ h1 {
         padding: 10px;
 
         background-attachment: scroll;
-
     }
-
 
     h1 {
-
         font-size: 30px;
-
     }
-
-
-    .menu-card {
-
-        padding: 22px;
-
-    }
-
 
     .zekr-grid {
 
@@ -844,95 +753,58 @@ h1 {
             repeat(2, 1fr);
 
         gap: 12px;
-
     }
-
 
     .counter-box {
-
         padding: 13px;
-
     }
-
 
     .zekr-name {
-
         font-size: 19px;
-
     }
-
 
     .count-button {
-
         font-size: 17px;
-
     }
 
-
     .adhkar-text {
-
         font-size: 19px;
-
     }
 
 }
 
-
 @media (max-width: 550px) {
 
     .main-menu {
-
         grid-template-columns: 1fr;
-
     }
-
 
     .zekr-grid {
-
         grid-template-columns: 1fr;
-
     }
-
 
     .baqiyat {
-
         grid-column: auto;
-
     }
-
 
     .top-message p {
-
         font-size: 16px;
-
     }
-
 
     .zekr-name {
-
         font-size: 20px;
-
     }
-
 
     .counter {
-
         font-size: 34px;
-
     }
-
 
     .total-counter {
-
         font-size: 40px;
-
     }
 
-
     .adhkar-text {
-
         font-size: 18px;
-
     }
 
 }
@@ -943,7 +815,6 @@ h1 {
 
 
 <body>
-
 
 <div class="page">
 
@@ -998,9 +869,7 @@ h1 {
 <div class="menu-card"
      onclick="showSection('zekrSection')">
 
-<div class="menu-icon">
-🌿
-</div>
+<div class="menu-icon">🌿</div>
 
 <div class="menu-title">
 ذكر الله
@@ -1016,9 +885,7 @@ h1 {
 <div class="menu-card"
      onclick="showSection('morningSection')">
 
-<div class="menu-icon">
-🌅
-</div>
+<div class="menu-icon">🌅</div>
 
 <div class="menu-title">
 أذكار الصباح
@@ -1034,9 +901,7 @@ h1 {
 <div class="menu-card"
      onclick="showSection('eveningSection')">
 
-<div class="menu-icon">
-🌙
-</div>
+<div class="menu-icon">🌙</div>
 
 <div class="menu-title">
 أذكار المساء
@@ -1052,9 +917,7 @@ h1 {
 <div class="menu-card"
      onclick="showSection('prayerSection')">
 
-<div class="menu-icon">
-🕌
-</div>
+<div class="menu-icon">🕌</div>
 
 <div class="menu-title">
 أذكار الصلاة
@@ -1062,6 +925,70 @@ h1 {
 
 <div class="menu-description">
 أذكار ما بعد الصلاة المفروضة
+</div>
+
+</div>
+
+
+<div class="menu-card"
+     onclick="showSection('marketSection')">
+
+<div class="menu-icon">🛒</div>
+
+<div class="menu-title">
+دعاء دخول السوق
+</div>
+
+<div class="menu-description">
+الدعاء عند دخول السوق
+</div>
+
+</div>
+
+
+<div class="menu-card"
+     onclick="showSection('needSection')">
+
+<div class="menu-icon">🤲</div>
+
+<div class="menu-title">
+دعاء قضاء الحاجة
+</div>
+
+<div class="menu-description">
+دعاء طلب الحاجة من الله
+</div>
+
+</div>
+
+
+<div class="menu-card"
+     onclick="showSection('sleepSection')">
+
+<div class="menu-icon">🌙</div>
+
+<div class="menu-title">
+دعاء النوم
+</div>
+
+<div class="menu-description">
+أذكار ودعاء قبل النوم
+</div>
+
+</div>
+
+
+<div class="menu-card"
+     onclick="showSection('wakeSection')">
+
+<div class="menu-icon">🌅</div>
+
+<div class="menu-title">
+دعاء الاستيقاظ
+</div>
+
+<div class="menu-description">
+الحمد لله على نعمة الحياة
 </div>
 
 </div>
@@ -1092,7 +1019,6 @@ h1 {
 <div id="zekrSection"
      class="section">
 
-
 <button class="back-button"
         onclick="showSection('homeSection')">
 
@@ -1100,11 +1026,9 @@ h1 {
 
 </button>
 
-
 <h2 class="section-title">
 🌿 ذكر الله
 </h2>
-
 
 <div class="zekr-grid">
 
@@ -1115,10 +1039,7 @@ h1 {
 سبحان الله
 </div>
 
-<div class="counter"
-     id="counter1">
-0
-</div>
+<div class="counter" id="counter1">0</div>
 
 <button class="count-button"
         onclick="increaseCounter(1)">
@@ -1143,10 +1064,7 @@ h1 {
 الحمد لله
 </div>
 
-<div class="counter"
-     id="counter2">
-0
-</div>
+<div class="counter" id="counter2">0</div>
 
 <button class="count-button"
         onclick="increaseCounter(2)">
@@ -1175,10 +1093,7 @@ h1 {
 
 </div>
 
-<div class="counter"
-     id="counter3">
-0
-</div>
+<div class="counter" id="counter3">0</div>
 
 <button class="count-button"
         onclick="increaseCounter(3)">
@@ -1203,10 +1118,7 @@ h1 {
 الله أكبر
 </div>
 
-<div class="counter"
-     id="counter4">
-0
-</div>
+<div class="counter" id="counter4">0</div>
 
 <button class="count-button"
         onclick="increaseCounter(4)">
@@ -1231,10 +1143,7 @@ h1 {
 لا حول ولا قوة إلا بالله
 </div>
 
-<div class="counter"
-     id="counter5">
-0
-</div>
+<div class="counter" id="counter5">0</div>
 
 <button class="count-button"
         onclick="increaseCounter(5)">
@@ -1259,10 +1168,7 @@ h1 {
 أستغفر الله
 </div>
 
-<div class="counter"
-     id="counter6">
-0
-</div>
+<div class="counter" id="counter6">0</div>
 
 <button class="count-button"
         onclick="increaseCounter(6)">
@@ -1294,10 +1200,7 @@ h1 {
 
 </div>
 
-<div class="counter"
-     id="counter7">
-0
-</div>
+<div class="counter" id="counter7">0</div>
 
 <button class="count-button"
         onclick="increaseCounter(7)">
@@ -1322,10 +1225,7 @@ h1 {
 الصلاة على النبي ﷺ
 </div>
 
-<div class="counter"
-     id="counter8">
-0
-</div>
+<div class="counter" id="counter8">0</div>
 
 <button class="count-button"
         onclick="increaseCounter(8)">
@@ -1367,7 +1267,6 @@ h1 {
 
 </div>
 
-
 </div>
 
 
@@ -1378,7 +1277,6 @@ h1 {
 <div id="morningSection"
      class="section">
 
-
 <button class="back-button"
         onclick="showSection('homeSection')">
 
@@ -1386,16 +1284,13 @@ h1 {
 
 </button>
 
-
 <h2 class="section-title">
 🌅 أذكار الصباح
 </h2>
 
-
 <div class="section-subtitle">
 حصن يومك بذكر الله 🤲
 </div>
-
 
 <div class="adhkar-progress-box">
 
@@ -1405,7 +1300,6 @@ h1 {
 الذكر 1 من 10
 
 </div>
-
 
 <div class="progress-bar">
 
@@ -1417,11 +1311,9 @@ h1 {
 
 </div>
 
-
 <div id="morningCard"
      class="adhkar-card">
 </div>
-
 
 <button class="adhkar-reset"
         onclick="resetAdhkar('morning')">
@@ -1430,13 +1322,10 @@ h1 {
 
 </button>
 
-
 <div id="morningCompleted"
      class="completed-message">
 
-<h2>
-🌿 أحسنت!
-</h2>
+<h2>🌿 أحسنت!</h2>
 
 <p>
 تم إكمال أذكار الصباح.
@@ -1444,7 +1333,6 @@ h1 {
 </p>
 
 </div>
-
 
 </div>
 
@@ -1456,7 +1344,6 @@ h1 {
 <div id="eveningSection"
      class="section">
 
-
 <button class="back-button"
         onclick="showSection('homeSection')">
 
@@ -1464,16 +1351,13 @@ h1 {
 
 </button>
 
-
 <h2 class="section-title">
 🌙 أذكار المساء
 </h2>
 
-
 <div class="section-subtitle">
 اختم يومك بذكر الله 🤲
 </div>
-
 
 <div class="adhkar-progress-box">
 
@@ -1483,7 +1367,6 @@ h1 {
 الذكر 1 من 10
 
 </div>
-
 
 <div class="progress-bar">
 
@@ -1495,11 +1378,9 @@ h1 {
 
 </div>
 
-
 <div id="eveningCard"
      class="adhkar-card">
 </div>
-
 
 <button class="adhkar-reset"
         onclick="resetAdhkar('evening')">
@@ -1508,13 +1389,10 @@ h1 {
 
 </button>
 
-
 <div id="eveningCompleted"
      class="completed-message">
 
-<h2>
-🌿 أحسنت!
-</h2>
+<h2>🌿 أحسنت!</h2>
 
 <p>
 تم إكمال أذكار المساء.
@@ -1522,7 +1400,6 @@ h1 {
 </p>
 
 </div>
-
 
 </div>
 
@@ -1534,7 +1411,6 @@ h1 {
 <div id="prayerSection"
      class="section">
 
-
 <button class="back-button"
         onclick="showSection('homeSection')">
 
@@ -1542,16 +1418,13 @@ h1 {
 
 </button>
 
-
 <h2 class="section-title">
 🕌 أذكار الصلاة
 </h2>
 
-
 <div class="section-subtitle">
 أذكار ما بعد الصلاة المفروضة 🤲
 </div>
-
 
 <div class="adhkar-progress-box">
 
@@ -1561,7 +1434,6 @@ h1 {
 الذكر 1 من 9
 
 </div>
-
 
 <div class="progress-bar">
 
@@ -1573,11 +1445,9 @@ h1 {
 
 </div>
 
-
 <div id="prayerCard"
      class="adhkar-card">
 </div>
-
 
 <button class="adhkar-reset"
         onclick="resetAdhkar('prayer')">
@@ -1586,13 +1456,10 @@ h1 {
 
 </button>
 
-
 <div id="prayerCompleted"
      class="completed-message">
 
-<h2>
-🌿 أحسنت!
-</h2>
+<h2>🌿 أحسنت!</h2>
 
 <p>
 تم إكمال أذكار ما بعد الصلاة.
@@ -1601,9 +1468,316 @@ h1 {
 
 </div>
 
+</div>
+
+
+<!-- =========================================
+     دعاء دخول السوق
+========================================= -->
+
+<div id="marketSection"
+     class="section">
+
+<button class="back-button"
+        onclick="showSection('homeSection')">
+
+← الرئيسية
+
+</button>
+
+<h2 class="section-title">
+🛒 دعاء دخول السوق
+</h2>
+
+<div class="section-subtitle">
+الدعاء عند دخول السوق
+</div>
+
+<div class="adhkar-card">
+
+<div class="adhkar-number">
+الدعاء
+</div>
+
+<div class="adhkar-text">
+
+لا إله إلا الله وحده لا شريك له،
+له الملك وله الحمد،
+يحيي ويميت،
+وهو حي لا يموت،
+بيده الخير،
+وهو على كل شيء قدير.
 
 </div>
 
+<div class="adhkar-reference">
+عدد المرات: مرة واحدة
+</div>
+
+<div class="adhkar-count">
+1 / 1
+</div>
+
+<button class="adhkar-button"
+        onclick="completeSimpleDua('market')">
+
+☝ تم الدعاء
+
+</button>
+
+</div>
+
+<button class="adhkar-reset"
+        onclick="resetSimpleDua('market')">
+
+↻ إعادة الدعاء
+
+</button>
+
+<div id="marketCompleted"
+     class="completed-message">
+
+<h2>🌿 أحسنت!</h2>
+
+<p>
+تقبل الله منا ومنكم.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- =========================================
+     دعاء قضاء الحاجة
+========================================= -->
+
+<div id="needSection"
+     class="section">
+
+<button class="back-button"
+        onclick="showSection('homeSection')">
+
+← الرئيسية
+
+</button>
+
+<h2 class="section-title">
+🤲 دعاء قضاء الحاجة
+</h2>
+
+<div class="section-subtitle">
+اسأل الله من فضله ورحمته
+</div>
+
+<div class="adhkar-card">
+
+<div class="adhkar-number">
+الدعاء
+</div>
+
+<div class="adhkar-text">
+
+لا إله إلا الله الحليم الكريم،
+سبحان الله رب العرش العظيم،
+الحمد لله رب العالمين،
+أسألك موجبات رحمتك،
+وعزائم مغفرتك،
+والغنيمة من كل بر،
+والسلامة من كل إثم،
+لا تدع لي ذنبًا إلا غفرته،
+ولا همًا إلا فرجته،
+ولا حاجة هي لك رضًا إلا قضيتها،
+يا أرحم الراحمين.
+
+</div>
+
+<div class="adhkar-reference">
+دعاء قضاء الحاجة
+</div>
+
+<div class="adhkar-count">
+1 / 1
+</div>
+
+<button class="adhkar-button"
+        onclick="completeSimpleDua('need')">
+
+☝ تم الدعاء
+
+</button>
+
+</div>
+
+<button class="adhkar-reset"
+        onclick="resetSimpleDua('need')">
+
+↻ إعادة الدعاء
+
+</button>
+
+<div id="needCompleted"
+     class="completed-message">
+
+<h2>🌿 أحسنت!</h2>
+
+<p>
+نسأل الله أن يقضي حوائجنا وحوائجكم بالخير.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- =========================================
+     دعاء النوم
+========================================= -->
+
+<div id="sleepSection"
+     class="section">
+
+<button class="back-button"
+        onclick="showSection('homeSection')">
+
+← الرئيسية
+
+</button>
+
+<h2 class="section-title">
+🌙 دعاء النوم
+</h2>
+
+<div class="section-subtitle">
+اذكر الله قبل نومك 🤲
+</div>
+
+<div class="adhkar-card">
+
+<div class="adhkar-number">
+دعاء النوم
+</div>
+
+<div class="adhkar-text">
+
+باسمك اللهم أموت وأحيا.
+
+</div>
+
+<div class="adhkar-reference">
+عدد المرات: مرة واحدة
+</div>
+
+<div class="adhkar-count">
+1 / 1
+</div>
+
+<button class="adhkar-button"
+        onclick="completeSimpleDua('sleep')">
+
+☝ تم الدعاء
+
+</button>
+
+</div>
+
+<button class="adhkar-reset"
+        onclick="resetSimpleDua('sleep')">
+
+↻ إعادة الدعاء
+
+</button>
+
+<div id="sleepCompleted"
+     class="completed-message">
+
+<h2>🌙 تصبح على خير</h2>
+
+<p>
+نسأل الله أن يحفظك ويبارك لك في نومك.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- =========================================
+     دعاء الاستيقاظ
+========================================= -->
+
+<div id="wakeSection"
+     class="section">
+
+<button class="back-button"
+        onclick="showSection('homeSection')">
+
+← الرئيسية
+
+</button>
+
+<h2 class="section-title">
+🌅 دعاء الاستيقاظ
+</h2>
+
+<div class="section-subtitle">
+الحمد لله الذي أحيانا
+</div>
+
+<div class="adhkar-card">
+
+<div class="adhkar-number">
+دعاء الاستيقاظ
+</div>
+
+<div class="adhkar-text">
+
+الحمد لله الذي أحيانا بعدما أماتنا
+وإليه النشور.
+
+</div>
+
+<div class="adhkar-reference">
+عدد المرات: مرة واحدة
+</div>
+
+<div class="adhkar-count">
+1 / 1
+</div>
+
+<button class="adhkar-button"
+        onclick="completeSimpleDua('wake')">
+
+☝ تم الدعاء
+
+</button>
+
+</div>
+
+<button class="adhkar-reset"
+        onclick="resetSimpleDua('wake')">
+
+↻ إعادة الدعاء
+
+</button>
+
+<div id="wakeCompleted"
+     class="completed-message">
+
+<h2>🌅 صباح الخير</h2>
+
+<p>
+الحمد لله على نعمة الحياة.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- =========================================
+     الفوتر
+========================================= -->
 
 <div class="footer">
 
@@ -1619,7 +1793,7 @@ h1 {
 
 
 /* =========================================
-   التنقل بين الأقسام
+   التنقل
 ========================================= */
 
 function showSection(sectionId) {
@@ -1627,17 +1801,14 @@ function showSection(sectionId) {
     const sections =
         document.querySelectorAll(".section");
 
-
     sections.forEach(function(section) {
 
         section.classList.remove("active");
 
     });
 
-
     document.getElementById("homeSection")
         .style.display = "none";
-
 
     if (sectionId === "homeSection") {
 
@@ -1650,10 +1821,8 @@ function showSection(sectionId) {
 
     }
 
-
     document.getElementById(sectionId)
         .classList.add("active");
-
 
     window.scrollTo(0, 0);
 
@@ -1661,7 +1830,7 @@ function showSection(sectionId) {
 
 
 /* =========================================
-   عدادات ذكر الله
+   العدادات الرئيسية
 ========================================= */
 
 let counters = {
@@ -1683,14 +1852,12 @@ function loadCounters() {
     const saved =
         localStorage.getItem("zekrCounters");
 
-
     if (saved) {
 
         try {
 
             const data =
                 JSON.parse(saved);
-
 
             for (let i = 1; i <= 8; i++) {
 
@@ -1712,7 +1879,6 @@ function loadCounters() {
 
     }
 
-
     updateAllCounters();
 
 }
@@ -1721,11 +1887,8 @@ function loadCounters() {
 function saveCounters() {
 
     localStorage.setItem(
-
         "zekrCounters",
-
         JSON.stringify(counters)
-
     );
 
 }
@@ -1735,12 +1898,9 @@ function increaseCounter(number) {
 
     counters[number]++;
 
-
     updateCounter(number);
 
-
     updateTotal();
-
 
     saveCounters();
 
@@ -1750,9 +1910,7 @@ function increaseCounter(number) {
 function updateCounter(number) {
 
     document.getElementById(
-
         "counter" + number
-
     ).innerText =
         counters[number];
 
@@ -1767,7 +1925,6 @@ function updateAllCounters() {
 
     }
 
-
     updateTotal();
 
 }
@@ -1777,13 +1934,11 @@ function updateTotal() {
 
     let total = 0;
 
-
     for (let i = 1; i <= 8; i++) {
 
         total += counters[i];
 
     }
-
 
     document.getElementById(
         "totalCounter"
@@ -1796,12 +1951,9 @@ function resetCounter(number) {
 
     counters[number] = 0;
 
-
     updateCounter(number);
 
-
     updateTotal();
-
 
     saveCounters();
 
@@ -1818,16 +1970,13 @@ function resetAllCounters() {
 
     }
 
-
     for (let i = 1; i <= 8; i++) {
 
         counters[i] = 0;
 
     }
 
-
     updateAllCounters();
-
 
     saveCounters();
 
@@ -2123,33 +2272,22 @@ count: 1
 
 
 /* =========================================
-   حالة الأذكار
+   حالات الأذكار
 ========================================= */
 
 let morningState = {
-
     index: 0,
-
     count: 0
-
 };
-
 
 let eveningState = {
-
     index: 0,
-
     count: 0
-
 };
 
-
 let prayerState = {
-
     index: 0,
-
     count: 0
-
 };
 
 
@@ -2164,12 +2302,10 @@ function loadAdhkarProgress() {
             "morningAdhkarState"
         );
 
-
     const eveningSaved =
         localStorage.getItem(
             "eveningAdhkarState"
         );
-
 
     const prayerSaved =
         localStorage.getItem(
@@ -2180,10 +2316,8 @@ function loadAdhkarProgress() {
     if (morningSaved) {
 
         try {
-
             morningState =
                 JSON.parse(morningSaved);
-
         }
 
         catch (e) {}
@@ -2194,10 +2328,8 @@ function loadAdhkarProgress() {
     if (eveningSaved) {
 
         try {
-
             eveningState =
                 JSON.parse(eveningSaved);
-
         }
 
         catch (e) {}
@@ -2208,10 +2340,8 @@ function loadAdhkarProgress() {
     if (prayerSaved) {
 
         try {
-
             prayerState =
                 JSON.parse(prayerSaved);
-
         }
 
         catch (e) {}
@@ -2237,11 +2367,8 @@ function saveAdhkarProgress(type) {
     if (type === "morning") {
 
         localStorage.setItem(
-
             "morningAdhkarState",
-
             JSON.stringify(morningState)
-
         );
 
     }
@@ -2249,11 +2376,8 @@ function saveAdhkarProgress(type) {
     else if (type === "evening") {
 
         localStorage.setItem(
-
             "eveningAdhkarState",
-
             JSON.stringify(eveningState)
-
         );
 
     }
@@ -2261,11 +2385,8 @@ function saveAdhkarProgress(type) {
     else if (type === "prayer") {
 
         localStorage.setItem(
-
             "prayerAdhkarState",
-
             JSON.stringify(prayerState)
-
         );
 
     }
@@ -2274,7 +2395,7 @@ function saveAdhkarProgress(type) {
 
 
 /* =========================================
-   عرض الذكر
+   عرض الأذكار
 ========================================= */
 
 function renderAdhkar(type) {
@@ -2348,18 +2469,14 @@ function renderAdhkar(type) {
     progressText.innerText =
 
         "الذكر " +
-
         (state.index + 1) +
-
         " من " +
-
         list.length;
 
 
     const progress =
 
         (state.index / list.length) *
-
         100;
 
 
@@ -2375,13 +2492,11 @@ function renderAdhkar(type) {
 
         </div>
 
-
         <div class="adhkar-text">
 
             ${item.text}
 
         </div>
-
 
         <div class="adhkar-reference">
 
@@ -2389,13 +2504,11 @@ function renderAdhkar(type) {
 
         </div>
 
-
         <div class="adhkar-count">
 
             ${state.count} / ${item.count}
 
         </div>
-
 
         <button
             class="adhkar-button"
@@ -2411,7 +2524,7 @@ function renderAdhkar(type) {
 
 
 /* =========================================
-   العد والانتقال التلقائي
+   العد
 ========================================= */
 
 function countAdhkar(type) {
@@ -2437,9 +2550,7 @@ function countAdhkar(type) {
 
 
     if (!item) {
-
         return;
-
     }
 
 
@@ -2451,9 +2562,7 @@ function countAdhkar(type) {
         state.count =
             item.count;
 
-
         saveAdhkarProgress(type);
-
 
         renderAdhkar(type);
 
@@ -2464,14 +2573,11 @@ function countAdhkar(type) {
 
             state.count = 0;
 
-
             saveAdhkarProgress(type);
-
 
             renderAdhkar(type);
 
         }, 500);
-
 
         return;
 
@@ -2479,7 +2585,6 @@ function countAdhkar(type) {
 
 
     saveAdhkarProgress(type);
-
 
     renderAdhkar(type);
 
@@ -2518,20 +2623,15 @@ function resetAdhkar(type) {
 
 
     if (!confirm(message)) {
-
         return;
-
     }
 
 
     if (type === "morning") {
 
         morningState = {
-
             index: 0,
-
             count: 0
-
         };
 
     }
@@ -2539,11 +2639,8 @@ function resetAdhkar(type) {
     else if (type === "evening") {
 
         eveningState = {
-
             index: 0,
-
             count: 0
-
         };
 
     }
@@ -2551,11 +2648,8 @@ function resetAdhkar(type) {
     else {
 
         prayerState = {
-
             index: 0,
-
             count: 0
-
         };
 
     }
@@ -2563,8 +2657,118 @@ function resetAdhkar(type) {
 
     saveAdhkarProgress(type);
 
-
     renderAdhkar(type);
+
+}
+
+
+/* =========================================
+   الأدعية المفردة
+========================================= */
+
+const simpleDuaKeys = {
+
+    market: "marketDuaCompleted",
+
+    need: "needDuaCompleted",
+
+    sleep: "sleepDuaCompleted",
+
+    wake: "wakeDuaCompleted"
+
+};
+
+
+function loadSimpleDuas() {
+
+    Object.keys(simpleDuaKeys)
+        .forEach(function(type) {
+
+            const completed =
+                localStorage.getItem(
+                    simpleDuaKeys[type]
+                );
+
+            if (completed === "true") {
+
+                showSimpleDuaCompleted(type);
+
+            }
+
+        });
+
+}
+
+
+function completeSimpleDua(type) {
+
+    localStorage.setItem(
+        simpleDuaKeys[type],
+        "true"
+    );
+
+    showSimpleDuaCompleted(type);
+
+}
+
+
+function showSimpleDuaCompleted(type) {
+
+    const card =
+        document.querySelector(
+            "#" + type + "Section .adhkar-card"
+        );
+
+    const completed =
+        document.getElementById(
+            type + "Completed"
+        );
+
+    if (card) {
+        card.style.display = "none";
+    }
+
+    if (completed) {
+        completed.style.display = "block";
+    }
+
+}
+
+
+function resetSimpleDua(type) {
+
+    if (!confirm(
+        "هل تريد إعادة هذا الدعاء؟"
+    )) {
+
+        return;
+
+    }
+
+
+    localStorage.removeItem(
+        simpleDuaKeys[type]
+    );
+
+
+    const card =
+        document.querySelector(
+            "#" + type + "Section .adhkar-card"
+        );
+
+    const completed =
+        document.getElementById(
+            type + "Completed"
+        );
+
+
+    if (card) {
+        card.style.display = "block";
+    }
+
+    if (completed) {
+        completed.style.display = "none";
+    }
 
 }
 
@@ -2618,13 +2822,7 @@ function sharePage() {
             "https://wa.me/?text=" +
 
             encodeURIComponent(
-
-                text +
-
-                "\n" +
-
-                url
-
+                text + "\n" + url
             ),
 
             "_blank"
@@ -2682,8 +2880,9 @@ loadCounters();
 
 loadAdhkarProgress();
 
-</script>
+loadSimpleDuas();
 
+</script>
 
 </body>
 
